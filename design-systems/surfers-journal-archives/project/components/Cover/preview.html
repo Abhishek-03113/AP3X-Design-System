@@ -1,0 +1,49 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Surfer's Journal Archives</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--sea-glass); color:var(--ink); font-family:var(--font-serif); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .t{fill:var(--tangerine)} .bl{fill:var(--blush)} .bu{fill:var(--butter)} .h{fill:var(--harbour)} .dw{fill:var(--deep-water)}
+  .arc{fill:none;stroke:var(--ink);stroke-width:1.5}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-serif); font-size:96px; line-height:0.95; font-weight:400; letter-spacing:0; color:var(--ink);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--ink); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      tangerine, blush, butter, harbour as full-height bands of unequal width (the colourway index) · deep-water cover 112x150
+arrangement a strip of unequal bands bleeding top and bottom, with one cover set on them
+pattern     a literal wave: three concentric quarter arcs in ink, from the surf subject
+scales      bands in space-4 (32) multiples, radius-none
+-->
+<rect class="t" x="96" y="0" width="96" height="288"/>
+<rect class="bl" x="192" y="0" width="64" height="288"/>
+<rect class="bu" x="256" y="0" width="128" height="288"/>
+<rect class="h" x="384" y="0" width="96" height="288"/>
+<rect class="dw" x="272" y="64" width="112" height="150"/>
+<path class="arc" d="M 0 288 A 96 96 0 0 1 96 192"/>
+<path class="arc" d="M 0 288 A 64 64 0 0 1 64 224"/>
+<path class="arc" d="M 0 288 A 128 128 0 0 1 128 160"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Surfer's<br>Journal</h1>
+<p class="tag">Every issue, in its own colourway.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- @dsCard group="Inputs" height=220 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@500&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--canvas);padding:24px;font-family:var(--font-sans);color:var(--ink)}
+.box{display:flex;max-width:560px}
+textarea{flex:1;height:96px;border:0;background:var(--panel);padding:12px;font:400 15px/17px var(--font-sans);letter-spacing:-.45px;color:var(--ink);resize:none;border-radius:var(--radius-none)}
+textarea::placeholder{color:var(--ink-2)}
+.send{width:96px;height:120px;background:var(--electric);color:var(--surface);border:0;font:400 48px/1 var(--font-sans);cursor:pointer}
+.chips{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
+.chip{font:400 12px/15.6px var(--font-sans);padding:2px 6px;color:var(--dark)}
+.o{background:var(--tag-orange)}.b{background:var(--tag-blue)}.g{background:var(--tag-green)}.c{background:var(--tag-coral)}.p{background:var(--tag-pink)}
+</style>
+</head>
+<body>
+<div class="box"><textarea id="brief" placeholder="Describe an image effect…"></textarea><button class="send" aria-label="Build">↑</button></div>
+<div class="chips"><span class="chip o">Image Effect</span><span class="chip b">Logo Motion</span><span class="chip g">Kinetic Typography</span><span class="chip c">3D Scene</span><span class="chip p">Animated Gallery</span></div>
+</body>
+</html>

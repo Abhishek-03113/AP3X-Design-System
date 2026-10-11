@@ -1,0 +1,25 @@
+<!-- @dsCard group="Actions" height=120 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400&family=Albert+Sans:wght@400;500&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--cream);font-family:var(--font-sans);padding:24px}
+.row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn{font:400 12px/12px var(--font-sans);letter-spacing:.36px;text-transform:uppercase;padding:12px 20px;border:1px solid var(--navy);border-radius:var(--radius-none);background:transparent;color:var(--navy);cursor:pointer}
+.btn.fill{background:var(--navy);color:var(--white)}
+.btn:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+.photo{background:var(--charcoal);padding:16px;display:flex}
+.btn.inv{border-color:var(--white);color:var(--white)}
+</style>
+</head>
+<body>
+<div class="row">
+  <button class="btn fill">Book consultation</button>
+  <button class="btn">Treatments</button>
+  <div class="photo"><button class="btn inv">Concerns</button></div>
+</div>
+</body>
+</html>

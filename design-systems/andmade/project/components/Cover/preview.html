@@ -1,0 +1,47 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ANDMADE</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&family=Courier+Prime&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .ink{fill:var(--ink)} .bl{fill:var(--link-blue)}
+  .rule{stroke:var(--ink);stroke-width:1}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-sans); font-size:80px; line-height:0.95; font-weight:500; letter-spacing:-2px; color:var(--ink);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--ink); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      ink 120x200 slab · link-blue 120x24 pill (the one accent link) — a two-colour brand, so the paper does the rest
+arrangement index columns: three columns at space-4 gaps, the slab in the middle one
+pattern     editorial: four hairlines (1px ink) marking the index rows, from "small black type, underlined titles"
+scales      columns 120 wide, gaps space-4 (48 → 40 here to fit), pill rx 12 (radius-pill drawn as half the 24px height)
+-->
+<line class="rule" x1="16" y1="48.5" x2="464" y2="48.5"/>
+<line class="rule" x1="16" y1="120.5" x2="136" y2="120.5"/>
+<line class="rule" x1="344" y1="120.5" x2="464" y2="120.5"/>
+<line class="rule" x1="16" y1="192.5" x2="136" y2="192.5"/>
+<rect class="ink" x="176" y="64" width="120" height="200"/>
+<rect class="bl pill" x="344" y="152" width="120" height="24" rx="12"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">ANDMADE</h1>
+<p class="tag">We uncover what truly matters and give purpose a clear form.</p>
+</div>
+</div>
+</body>
+</html>

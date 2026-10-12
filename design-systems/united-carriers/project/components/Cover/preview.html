@@ -1,0 +1,48 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>United Carriers</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Martian+Mono:wght@400&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--bg); color:var(--fg); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .ind{fill:var(--indigo)} .hz{fill:var(--horizon)} .sk{fill:var(--sky)} .fg{fill:var(--fg)}
+  .orbit{fill:none;stroke:var(--hairline);stroke-width:1}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-display); font-size:64px; line-height:0.95; font-weight:700; letter-spacing:0; color:var(--fg);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--fg-muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      indigo night 240x288 · the planet as a horizon disc bleeding off the right edge: horizon ring + sky rim · fg pill 96x32 (the white button)
+arrangement one tall field with a disc rising from the lower right, as the hero composes it
+pattern     a literal motif — orbit arcs: three hairline circles around the planet, from the space-and-journey hero
+scales      pill rx 16 (radius-pill drawn as half the 32px height), gaps space-4 (24), space-5 (48)
+-->
+<rect class="ind" x="240" y="0" width="240" height="288"/>
+<circle class="sk" cx="456" cy="296" r="182"/>
+<circle class="hz" cx="456" cy="296" r="176"/>
+<circle class="orbit" cx="456" cy="296" r="208"/>
+<circle class="orbit" cx="456" cy="296" r="240"/>
+<circle class="orbit" cx="456" cy="296" r="280"/>
+<rect class="fg pill" x="48" y="48" width="96" height="32" rx="16"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">United<br>Carriers</h1>
+<p class="tag">One operator. Every leg of the journey.</p>
+</div>
+</div>
+</body>
+</html>

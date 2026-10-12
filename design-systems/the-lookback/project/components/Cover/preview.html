@@ -1,0 +1,47 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Lookback</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=DM+Mono:wght@500&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--white); color:var(--black); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .fog{fill:var(--fog)} .tan{fill:var(--tan)} .rust{fill:var(--rust)} .sw{fill:var(--swell)}
+  .tile{rx:var(--radius-sm)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-sans); font-size:72px; line-height:0.95; font-weight:700; letter-spacing:-1px; color:var(--black);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--black); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      fog, tan, rust, swell as image tiles in the surf grid, 96x128 each (photo tints, the brand's only colour)
+arrangement a flush modular grid of tiles, one row offset, like the photo wall
+pattern     tiles at radius-sm corners, from "geometric, modular" — eight tiles, two merged wide
+scales      gaps space-2 (12), radius-sm 3.84
+-->
+<rect class="fog tile" x="24" y="24" width="96" height="128" rx="3.84"/>
+<rect class="tan tile" x="132" y="24" width="96" height="128" rx="3.84"/>
+<rect class="sw tile" x="240" y="24" width="204" height="128" rx="3.84"/>
+<rect class="rust tile" x="78" y="164" width="96" height="100" rx="3.84"/>
+<rect class="fog tile" x="186" y="164" width="96" height="100" rx="3.84"/>
+<rect class="tan tile" x="294" y="164" width="150" height="100" rx="3.84"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">The<br>Lookback</h1>
+<p class="tag">Moments, music, and work that keep us moving.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The List</title>
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--page); color:var(--black); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .pa{fill:var(--panel)} .gr{fill:var(--grey)} .bk{fill:var(--black)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-sans); font-size:120px; line-height:0.95; font-weight:400; letter-spacing:-4px; color:var(--black);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--graphite); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      panel 400x48 search field · black 64x20 All tools button · grey tag bars
+arrangement the index: search field over a wrapping cloud of tags
+pattern     the tag cloud as 24 short grey bars of varied length at a 20px line pitch
+scales      gaps space-1 (4)/space-2 (12), radius-none
+-->
+<rect class="bk" x="392" y="16" width="64" height="20"/>
+<rect class="pa" x="24" y="56" width="432" height="48"/>
+<g class="gr">
+<rect x="24" y="128" width="60" height="8"/><rect x="96" y="128" width="20" height="8"/><rect x="128" y="128" width="72" height="8"/><rect x="212" y="128" width="64" height="8"/><rect x="288" y="128" width="40" height="8"/><rect x="340" y="128" width="88" height="8"/>
+<rect x="24" y="148" width="96" height="8"/><rect x="132" y="148" width="48" height="8"/><rect x="192" y="148" width="28" height="8"/><rect x="232" y="148" width="80" height="8"/><rect x="324" y="148" width="56" height="8"/>
+<rect x="24" y="168" width="40" height="8"/><rect x="76" y="168" width="104" height="8"/><rect x="192" y="168" width="60" height="8"/><rect x="264" y="168" width="36" height="8"/><rect x="312" y="168" width="92" height="8"/>
+<rect x="24" y="188" width="72" height="8"/><rect x="108" y="188" width="56" height="8"/><rect x="176" y="188" width="88" height="8"/><rect x="276" y="188" width="44" height="8"/>
+</g>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">The List</h1>
+<p class="tag">If it's public, it's indexed.</p>
+</div>
+</div>
+</body>
+</html>

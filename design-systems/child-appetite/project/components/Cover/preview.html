@@ -1,0 +1,48 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Child Appetite</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bayon&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--midnight); color:var(--white); font-family:var(--font-serif); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .l{fill:none;stroke-width:2;stroke-dasharray:6 6}
+  .r{stroke:var(--red)} .y{stroke:var(--yolk)} .s{stroke:var(--sky)} .w{stroke:var(--white)}
+  .rf{fill:var(--red)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-serif); font-size:80px; line-height:0.95; font-weight:700; letter-spacing:0; color:var(--white);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--white); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      red 96x288 band bleeding off the right (the menu card) — the field is midnight, colour comes from the lines
+arrangement concentric contours centred in the box, the red card cutting the right edge
+pattern     the site's own contour lines: five dashed rounded squares at a space-2 (12) pitch cycling red/yolk/sky/white
+scales      dash 6, pitch 12, radius-pill rounding
+-->
+<rect class="rf" x="400" y="0" width="80" height="288"/>
+<rect class="l w" x="164" y="108" width="72" height="72" rx="36"/>
+<rect class="l s" x="140" y="84" width="120" height="120" rx="60"/>
+<rect class="l y" x="116" y="60" width="168" height="168" rx="84"/>
+<rect class="l r" x="92" y="36" width="216" height="216" rx="108"/>
+<rect class="l w" x="68" y="12" width="264" height="264" rx="132"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Child<br>Appetite</h1>
+<p class="tag">by Iris</p>
+</div>
+</div>
+</body>
+</html>

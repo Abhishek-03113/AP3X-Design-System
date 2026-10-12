@@ -1,0 +1,54 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Design Society</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&family=DM+Sans:opsz,wght@9..40,400&family=Space+Mono:wght@400;700&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--mist); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .el{fill:var(--electric)} .li{fill:var(--lime)} .ni{fill:var(--night)}
+  .card{rx:var(--radius-md)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-pixel); font-size:72px; line-height:0.95; font-weight:400; letter-spacing:0; color:var(--ink);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--ink); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      electric 336x288 full-bleed right field · lime 112x112 event tile · night 64x64 photo tile — about 45% of the cover
+arrangement one big blue section with the lime tile bottom-right, as on the site
+pattern     pixel checker: 16px squares in lime over the blue, from "loud, bold, poster type" and the pixel face — 20 cells
+scales      tiles radius-md (6), pitch 16 (space-3), gaps space-3
+-->
+<rect class="el" x="144" y="0" width="336" height="288"/>
+<rect class="li card" x="344" y="152" width="112" height="112" rx="6"/>
+<rect class="ni card" x="264" y="200" width="64" height="64" rx="6"/>
+<g class="li">
+<rect x="176" y="32" width="16" height="16"/><rect x="208" y="32" width="16" height="16"/><rect x="240" y="32" width="16" height="16"/><rect x="272" y="32" width="16" height="16"/>
+<rect x="192" y="48" width="16" height="16"/><rect x="224" y="48" width="16" height="16"/><rect x="256" y="48" width="16" height="16"/>
+<rect x="176" y="64" width="16" height="16"/><rect x="208" y="64" width="16" height="16"/><rect x="240" y="64" width="16" height="16"/>
+<rect x="192" y="80" width="16" height="16"/><rect x="224" y="80" width="16" height="16"/>
+<rect x="176" y="96" width="16" height="16"/><rect x="208" y="96" width="16" height="16"/>
+<rect x="192" y="112" width="16" height="16"/>
+<rect x="176" y="128" width="16" height="16"/>
+</g>
+<rect class="ni" x="64" y="32" width="48" height="48"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">The Design<br>Society</h1>
+<p class="tag">La société secrète la moins gardée de Lyon.</p>
+</div>
+</div>
+</body>
+</html>

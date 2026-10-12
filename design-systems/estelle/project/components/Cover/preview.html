@@ -1,0 +1,46 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Estelle</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ojuju:wght@300;400&family=Fustat:wght@400&family=Spline+Sans+Mono:wght@400&family=Oooh+Baby&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--cream); color:var(--olive); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .sa{fill:var(--sage)} .ol{fill:var(--olive)}
+  .ray{stroke:var(--olive);stroke-width:2}
+  .sun{fill:none;stroke:var(--olive);stroke-width:2}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-display); font-size:112px; line-height:0.95; font-weight:300; letter-spacing:0; color:var(--olive);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--olive); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      sage 200x288 arch panel (radius-round top) · olive 56x56 disc
+arrangement one tall arched panel with a sun over it, symmetric, like the engraved ornament
+pattern     a literal motif: the sun — a ring with twelve rays in olive, from the engraving
+scales      space-3 (32) margins, radius-round
+-->
+<path class="sa" d="M 160 288 L 160 120 A 100 100 0 0 1 360 120 L 360 288 Z"/>
+<circle class="sun" cx="260" cy="128" r="36"/>
+<circle class="ol" cx="260" cy="128" r="20"/>
+<g class="ray"><line x1="260" y1="72" x2="260" y2="56"/><line x1="260" y1="184" x2="260" y2="200"/><line x1="204" y1="128" x2="188" y2="128"/><line x1="316" y1="128" x2="332" y2="128"/><line x1="220" y1="88" x2="209" y2="77"/><line x1="300" y1="168" x2="311" y2="179"/><line x1="300" y1="88" x2="311" y2="77"/><line x1="220" y1="168" x2="209" y2="179"/></g>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Estelle</h1>
+<p class="tag">An open-air restaurant in Scottsdale.</p>
+</div>
+</div>
+</body>
+</html>

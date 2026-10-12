@@ -1,0 +1,25 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-11T08:06:12Z"
+  },
+  "title": "L'Étude",
+  "namespace": "Letude",
+  "libraries": [],
+  "sections": {},
+  "groups": [],
+  "assetGroups": {},
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Abhishek",
+    "via": "Claude Code",
+    "at": "2026-10-11T08:06:12Z",
+    "note": "Created from the public site https://letude.group/ (featured on siteofsites.co)."
+  }
+}

@@ -1,0 +1,46 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>1-800 Happy Birthday</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Archivo+Black&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--sky); color:var(--night); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .am{fill:var(--amber)} .su{fill:var(--sun)} .cl{fill:var(--cloud)} .ca{fill:var(--candy)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-script); font-size:72px; line-height:0.95; font-weight:400; letter-spacing:0; color:var(--night);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--night); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      amber glow r=140 bleeding off the right · sun r=104 · three cloud pills · candy 96x36 badge
+arrangement one huge sun rising off the right edge with clouds drifting across, as the hero frames it
+pattern     a literal motif: the sun and clouds — soft pills from radius-badge and radius-sun
+scales      radius-sun, radius-badge 12, gaps space-2 (16)
+-->
+<circle class="am" cx="320" cy="144" r="148"/>
+<circle class="su" cx="320" cy="144" r="108"/>
+<rect class="cl" x="24" y="40" width="160" height="40" rx="20"/>
+<rect class="cl" x="60" y="200" width="200" height="44" rx="22"/>
+<rect class="cl" x="360" y="244" width="140" height="36" rx="18"/>
+<rect class="ca" x="272" y="126" width="96" height="36" rx="12"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">1-800 Happy<br>Birthday</h1>
+<p class="tag">For every heavenly birthday celebrated.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>System Ø</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--night); color:var(--paper); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .cl{fill:var(--cloth)} .cll{fill:var(--cloth-light)} .ch{fill:var(--charcoal)}
+  .ring{fill:none;stroke:var(--paper);stroke-width:1}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-sans); font-size:96px; line-height:0.95; font-weight:400; letter-spacing:0; color:var(--paper);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--ash); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      cloth 240x288 film field bleeding off top/bottom/right · cloth-light 96x96 · charcoal 80x48 (the cookie bar)
+arrangement one tall film slab with a lighter fold, as the hero crops fabric
+pattern     a literal motif: the water bead — three concentric circles, from "the revolution is circular"
+scales      radius-circle, spacing space-2 (16)/space-3 (40)
+-->
+<rect class="cl" x="240" y="0" width="240" height="288"/>
+<rect class="cll" x="288" y="144" width="96" height="96"/>
+<rect class="ch" x="40" y="216" width="80" height="48"/>
+<circle class="ring" cx="160" cy="112" r="64"/>
+<circle class="ring" cx="160" cy="112" r="44"/>
+<circle class="ring" cx="160" cy="112" r="24"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">System Ø</h1>
+<p class="tag">Our journey toward circularity.</p>
+</div>
+</div>
+</body>
+</html>

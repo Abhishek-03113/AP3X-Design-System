@@ -1,0 +1,45 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Huichuan Wang</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&family=VT323&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--night); color:var(--ice); font-family:var(--font-pixel); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .mo{fill:var(--moss)} .la{fill:var(--lagoon)}
+  .e{stroke:var(--ice-50);stroke-width:.75} .n{fill:var(--ice)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-pixel); font-size:64px; line-height:0.95; font-weight:400; letter-spacing:0; color:var(--ice);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--ice-50); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      moss 480x288 painting field under a lagoon tint 360x288 — the background painting
+arrangement painted field bleeding off the right, tinted, with the graph floating over it
+pattern     a literal motif: the node constellation — 12 ice nodes (radius-node) joined by ice-50 edges
+scales      node radii 3–6, line height space-3 (32)
+-->
+<rect class="mo" x="0" y="0" width="480" height="288"/>
+<rect class="la" x="120" y="0" width="360" height="288"/>
+<g class="e"><line x1="300" y1="140" x2="220" y2="60"/><line x1="300" y1="140" x2="400" y2="70"/><line x1="300" y1="140" x2="420" y2="220"/><line x1="300" y1="140" x2="200" y2="230"/><line x1="220" y1="60" x2="400" y2="70"/><line x1="200" y1="230" x2="120" y2="150"/><line x1="120" y1="150" x2="220" y2="60"/><line x1="420" y1="220" x2="460" y2="140"/><line x1="400" y1="70" x2="460" y2="140"/><line x1="60" y1="60" x2="120" y2="150"/></g>
+<g class="n"><circle cx="300" cy="140" r="7"/><circle cx="220" cy="60" r="4"/><circle cx="400" cy="70" r="4"/><circle cx="420" cy="220" r="5"/><circle cx="200" cy="230" r="3"/><circle cx="120" cy="150" r="3"/><circle cx="460" cy="140" r="3"/><circle cx="60" cy="60" r="3"/></g>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Huichuan<br>Wang</h1>
+<p class="tag">▶ hello and welcome :)</p>
+</div>
+</div>
+</body>
+</html>

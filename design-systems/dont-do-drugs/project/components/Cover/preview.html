@@ -1,0 +1,46 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Don't Do Drugs</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--tape); color:var(--black); font-family:var(--font-condensed); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .bk{fill:var(--black)} .go{fill:var(--go)} .mg{fill:var(--magenta)} .cy{fill:var(--cyan)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-display); font-size:72px; line-height:0.95; font-weight:400; letter-spacing:0; color:var(--black);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--black); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      black tape bands 560x48 ×3 tilted · go, magenta, cyan portrait tiles 64x64
+arrangement layered tilted bands running off both edges, tiles pinned over them
+pattern     stripes at a tape pitch (space-4, 64), from "loud, bold, poster type"
+scales      tiles radius-sm (10.4), bands 48 tall
+-->
+<rect class="bk" x="-40" y="24" width="560" height="48" transform="rotate(-6 240 48)"/>
+<rect class="bk" x="-40" y="120" width="560" height="48" transform="rotate(4 240 144)"/>
+<rect class="bk" x="-40" y="216" width="560" height="48" transform="rotate(-3 240 240)"/>
+<rect class="cy" x="96" y="88" width="64" height="64" rx="10.4"/>
+<rect class="go" x="248" y="168" width="64" height="64" rx="10.4"/>
+<rect class="mg" x="384" y="64" width="64" height="64" rx="10.4"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Don't Do<br>Drugs</h1>
+<p class="tag">Stay weird.</p>
+</div>
+</div>
+</body>
+</html>

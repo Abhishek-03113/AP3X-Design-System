@@ -1,0 +1,46 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Celine Ka Wing Lau</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;700&family=Archivo:wdth,wght@125,400;125,700&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--highlighter); color:var(--line); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .li{fill:var(--lilac);stroke:var(--line);stroke-width:3} .sk{fill:var(--sky);stroke:var(--line);stroke-width:3}
+  .to{fill:var(--tomato);stroke:var(--line);stroke-width:3} .fr{fill:var(--frog);stroke:var(--line);stroke-width:3}
+  .st{rx:var(--radius-sticker)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-wide); font-size:64px; line-height:0.95; font-weight:700; letter-spacing:0; color:var(--line);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--line); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      lilac 160x200 sticker · sky 120x120 disc · tomato 128x72 sticker · frog 56x56 disc — all outlined in line, as every drawn object is
+arrangement a loose collage, slightly tilted, like objects scattered on the yellow
+pattern     discs and stickers from "soft, friendly": radius-sticker (18) corners and radius-round discs, outline space-1-ish 3px
+scales      gaps space-4 (48), radius-sticker 18, radius-round
+-->
+<rect class="li st" x="48" y="40" width="160" height="200" rx="18" transform="rotate(-6 128 140)"/>
+<circle class="sk" cx="300" cy="96" r="60"/>
+<rect class="to st" x="248" y="184" width="128" height="72" rx="18" transform="rotate(5 312 220)"/>
+<circle class="fr" cx="420" cy="232" r="28"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Celine Ka<br>Wing Lau</h1>
+<p class="tag">Illustrator, Hong Kong and London.</p>
+</div>
+</div>
+</body>
+</html>

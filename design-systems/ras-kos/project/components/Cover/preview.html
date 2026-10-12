@@ -1,0 +1,49 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ras Koš</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=IBM+Plex+Mono:wght@300&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .pa{fill:var(--panel)} .ik{fill:var(--ink)} .gr{fill:var(--graphite)}
+  .hair{stroke:var(--pencil);stroke-width:1}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-mono); font-size:96px; line-height:0.95; font-weight:300; letter-spacing:0; color:var(--ink);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--graphite); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      panel 96x288 sidebar · ink 120x150 cover · graphite 120x150 cover — a monochrome archive
+arrangement the archive grid: sidebar, then covers in hairline cells
+pattern     editorial hairlines: five 1px pencil rules forming the grid
+scales      cells 144 pitch, hairline 1px
+-->
+<rect class="pa" x="0" y="0" width="96" height="288"/>
+<rect class="ik" x="120" y="24" width="120" height="150"/>
+<rect class="gr" x="264" y="24" width="120" height="150"/>
+<line class="hair" x1="96.5" y1="0" x2="96.5" y2="288"/>
+<line class="hair" x1="252.5" y1="0" x2="252.5" y2="288"/>
+<line class="hair" x1="396.5" y1="0" x2="396.5" y2="288"/>
+<line class="hair" x1="96" y1="196.5" x2="480" y2="196.5"/>
+<line class="hair" x1="96" y1="228.5" x2="480" y2="228.5"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Ras Koš</h1>
+<p class="tag">comics & movement</p>
+</div>
+</div>
+</body>
+</html>

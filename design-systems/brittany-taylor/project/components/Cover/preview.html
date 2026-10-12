@@ -1,0 +1,48 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Brittany Taylor</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Homemade+Apple&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--linen); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .co{fill:var(--cobalt)} .ja{fill:var(--jade)} .br{fill:var(--brick)} .sk{fill:var(--sky)}
+  .card{rx:var(--radius-card)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-sans); font-size:72px; line-height:0.95; font-weight:700; letter-spacing:-1.44px; color:var(--ink);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--olive); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      cobalt 176x200 card · jade 128x128 card · brick 64x64 · sky 96x40 pill — the illustration palette
+arrangement staggered stack of rounded cards, like the project grid
+pattern     discs and pills from radius-pill and "warm, playful": three sky discs, one pill
+scales      radius-card 16, gaps space-2 (16), pill radius half of 40
+-->
+<rect class="co card" x="40" y="32" width="176" height="200" rx="16"/>
+<rect class="ja card" x="232" y="104" width="128" height="128" rx="16"/>
+<rect class="br card" x="376" y="168" width="64" height="64" rx="16"/>
+<rect class="sk" x="232" y="48" width="96" height="40" rx="20"/>
+<circle class="sk" cx="400" cy="72" r="24"/>
+<circle class="br" cx="408" cy="128" r="10"/>
+<circle class="ja" cx="128" cy="260" r="12"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Brittany<br>Taylor</h1>
+<p class="tag">Independent web designer and marketing strategist.</p>
+</div>
+</div>
+</body>
+</html>

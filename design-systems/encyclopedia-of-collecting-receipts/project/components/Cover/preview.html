@@ -1,0 +1,50 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Encyclopedia of Collecting Receipts</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Big+Shoulders+Text:wght@500&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--white); color:var(--black); font-family:var(--font-receipt); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .th{fill:var(--thermal)} .bk{fill:var(--black)}
+  .dash{fill:none;stroke:var(--black);stroke-dasharray:4 4}
+  .dot{fill:none;stroke:var(--black);stroke-dasharray:1 3}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-wide); font-size:56px; line-height:1; font-weight:500; letter-spacing:0; color:var(--black);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--faded); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      thermal receipts 72x240, 64x200, 80x220 fanned · one black 72x24 active menu key
+arrangement receipts fanned and tilted like the draggable pile
+pattern     dashed tear lines (dash 4) and two dotted action badges (radius-circle)
+scales      gaps space-3 (16), badge 52
+-->
+<rect class="th" x="120" y="24" width="72" height="240" transform="rotate(-8 156 144)"/>
+<rect class="th" x="200" y="40" width="64" height="200" transform="rotate(4 232 140)"/>
+<rect class="th" x="272" y="20" width="80" height="230" transform="rotate(-3 312 135)"/>
+<rect class="bk" x="24" y="200" width="72" height="24"/>
+<line class="dash" x1="16" y1="180" x2="104" y2="180"/>
+<line class="dash" x1="16" y1="244" x2="104" y2="244"/>
+<circle class="dot" cx="424" cy="56" r="26"/>
+<circle class="dot" cx="424" cy="236" r="26"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Encyclopedia of<br>Collecting Receipts</h1>
+<p class="tag">Stack, spread, or get messy.</p>
+</div>
+</div>
+</body>
+</html>

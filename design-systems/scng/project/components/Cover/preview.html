@@ -1,0 +1,47 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SCNG</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@200;500;700&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--ink); color:var(--bronze); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .ch{fill:var(--charcoal)} .bk{fill:var(--black)} .br{fill:var(--bronze)}
+  .arc{fill:none;stroke:var(--charcoal);stroke-width:10}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-sans); font-size:120px; line-height:0.95; font-weight:500; letter-spacing:0; color:var(--bronze);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--bone); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      charcoal 240x288 textile field · black 120x120 · bronze 8 short bars (the superscript indices)
+arrangement a dark textile field with a darker inset, quiet, like the grainy hero
+pattern     a literal motif: the woven pattern as four concentric charcoal arcs
+scales      bar pitch space-3 (32), radius-none
+-->
+<rect class="ch" x="240" y="0" width="240" height="288"/>
+<rect class="bk" x="320" y="96" width="120" height="120"/>
+<path class="arc" d="M 40 288 A 160 160 0 0 1 200 128"/>
+<path class="arc" d="M 80 288 A 120 120 0 0 1 200 168"/>
+<path class="arc" d="M 120 288 A 80 80 0 0 1 200 208"/>
+<rect class="br" x="264" y="32" width="24" height="4"/><rect class="br" x="296" y="32" width="40" height="4"/><rect class="br" x="344" y="32" width="16" height="4"/><rect class="br" x="368" y="32" width="56" height="4"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">SCNG</h1>
+<p class="tag">Cultural Fragments, and more…</p>
+</div>
+</div>
+</body>
+</html>

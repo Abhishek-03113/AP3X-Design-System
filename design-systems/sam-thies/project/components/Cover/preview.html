@@ -1,0 +1,44 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sam Thies</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--fog); color:var(--ink); font-family:var(--font-mono); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .du{fill:var(--dust)} .ea{fill:var(--earth)} .ni{fill:var(--night)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-mono); font-size:72px; line-height:0.95; font-weight:400; letter-spacing:-2px; color:var(--ink);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--ink); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      dust 480x120 ground band · earth 480x24 shadow band · night 40x14 (the ute)
+arrangement a low horizon: strips of unequal bands across the bottom, sky (fog) above, as the hero still
+pattern     horizontal bands, the outback horizon itself; no other marks
+scales      bands 120/24, space-2 (12)
+-->
+<rect class="du" x="0" y="168" width="480" height="120"/>
+<rect class="ea" x="0" y="160" width="480" height="8"/>
+<rect class="ea" x="0" y="248" width="480" height="40"/>
+<rect class="ni" x="220" y="150" width="40" height="14"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Sam Thies</h1>
+<p class="tag">Visual stories across people, place, and culture.</p>
+</div>
+</div>
+</body>
+</html>

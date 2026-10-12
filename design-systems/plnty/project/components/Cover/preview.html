@@ -1,0 +1,48 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Plnty</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@500&family=Instrument+Sans:wght@400;500&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--canvas); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .st{fill:var(--stone)} .ca{fill:var(--carbon)} .ho{fill:var(--hot)} .la{fill:var(--lavender)}
+  .chip{fill:var(--stone);stroke:var(--ink);stroke-width:3}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-display); font-size:120px; line-height:0.95; font-weight:500; letter-spacing:-2px; color:var(--ink);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--taupe); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      stone 240x184 panel (radius-lg) · carbon 112x112 · hot 96x96 artwork tile · lavender 96x28 pill
+arrangement one large rounded panel with a showcase tile breaking its corner, as the hero art sits on the canvas
+pattern     outlined tool chips (radius-tool) — three, from the chunky video-restyler chips
+scales      radius-lg 24, radius-tool ~22, gaps space-3 (16)
+-->
+<rect class="st" x="32" y="48" width="280" height="200" rx="24"/>
+<rect class="ca" x="296" y="24" width="152" height="152" rx="16"/>
+<rect class="ho" x="336" y="120" width="104" height="104" rx="16"/>
+<rect class="la" x="352" y="248" width="96" height="28" rx="14"/>
+<rect class="chip" x="56" y="80" width="144" height="40" rx="20"/>
+<rect class="chip" x="56" y="136" width="120" height="40" rx="20"/>
+<rect class="chip" x="56" y="192" width="168" height="40" rx="20"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Plnty</h1>
+<p class="tag">The agentic creative canvas for professional creators.</p>
+</div>
+</div>
+</body>
+</html>

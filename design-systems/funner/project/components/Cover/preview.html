@@ -1,0 +1,46 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Funner</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--white); color:var(--black); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .sk{fill:var(--sky)} .fl{fill:var(--flame)} .su{fill:var(--sun)} .li{fill:var(--lilac)} .gr{fill:var(--grass)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-sans); font-size:120px; line-height:0.95; font-weight:500; letter-spacing:0; color:var(--black);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--black); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      the five category pills at full size: sky, flame, sun, lilac, grass, each 200x40
+arrangement a staggered stack of pills, one per category, like the nav row stood on end
+pattern     pills (radius-pill), from the colour-coded navigation; plus one sky disc for the logo
+scales      pill height 40 (rx 20), gaps space-2 (12)
+-->
+<rect class="sk" x="40" y="32" width="200" height="40" rx="20"/>
+<rect class="fl" x="96" y="84" width="240" height="40" rx="20"/>
+<rect class="su" x="152" y="136" width="176" height="40" rx="20"/>
+<rect class="li" x="72" y="188" width="208" height="40" rx="20"/>
+<rect class="gr" x="200" y="240" width="240" height="40" rx="20"/>
+<circle class="sk" cx="408" cy="80" r="48"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Funner</h1>
+<p class="tag">Hair you want to wear.</p>
+</div>
+</div>
+</body>
+</html>

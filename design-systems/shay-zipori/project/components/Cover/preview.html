@@ -1,0 +1,45 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shay Zipori</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;500&family=IBM+Plex+Sans+Condensed:wght@700&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--black); color:var(--white); font-family:var(--font-serif); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .wh{fill:var(--white)} .gr{fill:var(--graphite)} .ta{fill:var(--tan)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-display); font-size:88px; line-height:0.95; font-weight:700; letter-spacing:-3px; color:var(--white);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--white); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      white bottle 72x160 and sleeve 96x120 · graphite 120x64 (the tab) · tan 16x16 (packaging accent)
+arrangement objects scattered at angles across black, bleeding off the edge
+pattern     a strap: one long white band crossing the box at 15°, from the product photography
+scales      space-2 (16) gaps, radius-none except the bottle shoulder
+-->
+<rect class="gr" x="24" y="24" width="120" height="64"/>
+<rect class="wh" x="160" y="60" width="72" height="160" rx="24" transform="rotate(-18 196 140)"/>
+<rect class="wh" x="320" y="120" width="96" height="120" transform="rotate(10 368 180)"/>
+<rect class="wh" x="40" y="200" width="440" height="14" transform="rotate(-12 260 207)"/>
+<rect class="ta" x="440" y="40" width="16" height="16"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Shay<br>Zipori</h1>
+<p class="tag">Objects, laid flat, in white.</p>
+</div>
+</div>
+</body>
+</html>

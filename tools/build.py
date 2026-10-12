@@ -7,9 +7,12 @@ import sys
 
 import systems_a
 import systems_b
+import systems_c
+import systems_d
+import systems_e
 from ds_lib import build
 
-SYSTEMS = systems_a.SYSTEMS + systems_b.SYSTEMS
+SYSTEMS = systems_a.SYSTEMS + systems_b.SYSTEMS + systems_c.SYSTEMS + systems_d.SYSTEMS + systems_e.SYSTEMS
 
 
 def rgb(v, ground=(255, 255, 255)):
@@ -55,11 +58,37 @@ PAIRS = {
     "celine-ka-wing-lau": [("ink", "highlighter")] + [("line", g) for g in ["lilac", "sky", "tomato", "tangerine", "frog", "bubblegum", "paper"]],
     "andmade": [("ink", "paper"), ("ink-50", "paper"), ("link-blue", "paper"), ("white", "ink")],
     "united-carriers": [("fg", "bg"), ("fg-muted", "bg"), ("fg-subtle", "bg"), ("fg", "bg-raised"), ("bg", "fg")],
+    "the-lookback": [("black", "white"), ("grey", "white"), ("white", "fog")],
+    "brittany-taylor": [("ink", "linen"), ("olive", "linen"), ("white", "cobalt"), ("white", "jade")],
+    "arcteryx-system-0": [("paper", "night"), ("ash", "night")],
+    "flowlife": [("ink", "snow"), ("sale", "snow"), ("white", "ink")],
+    "bleibtgleich": [("black", "white")],
+    "a-lign-studio": [("graphite", "paper"), ("paper", "night"), ("paper", "coral"), ("night", "coral")],
+    "plnty": [("ink", "canvas"), ("taupe", "canvas"), ("taupe", "stone"), ("ink", "lavender"), ("ink", "stone"), ("canvas", "ink")],
+    "child-appetite": [("black", "red"), ("black", "yolk"), ("black", "sky"), ("white", "midnight")],
+    "huichuan-wang": [("ice", "night"), ("ice-50", "night")],
+    "encyclopedia-of-collecting-receipts": [("black", "white"), ("faded", "white")],
+    "shay-zipori": [("white", "black"), ("white", "graphite")],
+    "estelle": [("olive", "cream"), ("olive", "sage"), ("cream", "olive")],
+    "dont-do-drugs": [("black", g) for g in ["tape", "go", "magenta", "cyan", "leaf"]],
+    "junyeop-lee": [("white", "black"), ("silver", "black"), ("smoke", "black")],
+    "windows": [("black", "concrete"), ("muted", "concrete")],
+    "scng": [("bone", "ink"), ("bronze", "ink"), ("bone", "charcoal")],
+    "julien-pianetti": [("ink", "white"), ("ash", "white"), ("graphite", "white")],
+    "ras-kos": [("ink", "paper"), ("graphite", "paper"), ("pencil", "paper"), ("graphite", "panel")],
+    "baran-ceylan": [("black", "white")],
+    "funner": [("black", g) for g in ["sky", "flame", "sun", "lilac", "grass"]] + [("white", "black")],
+    "1-800-happy-birthday": [("night", "sun"), ("toffee", "sun"), ("cloud", "candy"), ("night", "cloud")],
+    "the-list": [("black", "page"), ("grey", "page"), ("grey", "panel"), ("graphite", "page")],
+    "sam-thies": [("ink", "fog"), ("fog", "night"), ("ink", "haze")],
     "seventeen": [("black", "white"), ("stone", "white"), ("black", "stone"), ("white", "brick"), ("white", "harbour"), ("black", "field"), ("black", "lime"), ("white", "ochre"), ("black", "lagoon"), ("black", "candy"), ("white", "cobalt"), ("white", "umber"), ("black", "lilac"), ("black", "aqua")],
 }
 
 if __name__ == "__main__":
+    only = set(sys.argv[1:])
     for spec in SYSTEMS:
+        if only and spec["slug"] not in only:
+            continue
         path = build(spec)
         print(f"built {spec['slug']}")
         for theme in [t["id"] for t in spec.get("themes", [{"id": "light"}])]:

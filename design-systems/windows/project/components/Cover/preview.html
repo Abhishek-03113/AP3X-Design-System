@@ -1,0 +1,45 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>windows</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--concrete); color:var(--black); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .wh{fill:var(--white)} .si{fill:var(--sill)} .ft{fill:var(--frame-top)} .fb{fill:var(--frame-bottom)} .bk{fill:var(--black)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-serif); font-size:112px; line-height:0.95; font-weight:400; letter-spacing:0; color:var(--black);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--black); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      white frames 96x176 ×3 with sill ledges · black photo panes inside · frame-top/frame-bottom 8px border bands at top and bottom
+arrangement a row of tall windows at a wide pitch cut into the wall, as the diary lays them out
+pattern     tiles: window frames with sills, three units, from "geometric, modular"
+scales      frame 12, sill 12, pitch 144
+-->
+<rect class="ft" x="0" y="0" width="480" height="6"/>
+<rect class="fb" x="0" y="282" width="480" height="6"/>
+<rect class="wh" x="24" y="52" width="96" height="176"/><rect class="bk" x="36" y="64" width="72" height="152"/><rect class="si" x="20" y="228" width="104" height="12"/>
+<rect class="wh" x="168" y="52" width="96" height="176"/><rect class="bk" x="180" y="64" width="72" height="152"/><rect class="si" x="164" y="228" width="104" height="12"/>
+<rect class="wh" x="312" y="52" width="96" height="176"/><rect class="si" x="308" y="228" width="104" height="12"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">windows</h1>
+<p class="tag">place is temporary. you are not.</p>
+</div>
+</div>
+</body>
+</html>

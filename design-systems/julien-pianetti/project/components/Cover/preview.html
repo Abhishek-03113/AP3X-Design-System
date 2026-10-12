@@ -1,0 +1,46 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Julien Pianetti</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--white); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .ik{fill:var(--ink)} .as{fill:var(--ash)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-sans); font-size:72px; line-height:0.95; font-weight:500; letter-spacing:0; color:var(--ink);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--graphite); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      ink blobs (the hand-cut display lettering abstracted as discs and slabs), one ash dot
+arrangement heavy black shapes clustered low, like "Selected Work" breaking the calm page
+pattern     a distinctive display face → oversized blob shapes: four discs and two slabs, all ink
+scales      radius-pill rounding, gaps space-2 (12)
+-->
+<rect class="ik" x="40" y="120" width="96" height="120" rx="40"/>
+<circle class="ik" cx="200" cy="180" r="60"/>
+<rect class="ik" x="272" y="96" width="64" height="144" rx="12"/>
+<circle class="ik" cx="400" cy="200" r="40"/>
+<circle class="ik" cx="400" cy="112" r="24"/>
+<circle class="as" cx="96" cy="64" r="6"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Julien<br>Pianetti</h1>
+<p class="tag">Independent designer based in Dijon, France.</p>
+</div>
+</div>
+</body>
+</html>

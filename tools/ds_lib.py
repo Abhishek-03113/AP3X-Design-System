@@ -46,8 +46,8 @@ def cover(spec):
     return (
         "<!-- @dsCard height=288 -->\n<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n"
         f"<title>{spec['title']}</title>\n"
-        f'<link rel="stylesheet" href="{href}">\n'
-        "<style>\n"
+        + (f'<link rel="stylesheet" href="{href}">\n' if href else "")
+        + "<style>\n"
         "  html, body { margin:0; height:100%; }\n"
         f"  body {{ background:var(--{c['ground']}); color:var(--{c['ink']}); font-family:var(--font-{c['body_font']}); overflow:hidden; }}\n"
         "  .cover { position:relative; height:288px; overflow:hidden; }\n"

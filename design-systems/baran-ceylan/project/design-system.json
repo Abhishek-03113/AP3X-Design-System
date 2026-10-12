@@ -1,0 +1,25 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-12T05:21:34Z"
+  },
+  "title": "Baran Ceylan",
+  "namespace": "BaranCeylan",
+  "libraries": [],
+  "sections": {},
+  "groups": [],
+  "assetGroups": {},
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Abhishek",
+    "via": "Claude Code",
+    "at": "2026-10-12T05:21:34Z",
+    "note": "Created from the public site https://baranceylan.co/ (featured on siteofsites.co)."
+  }
+}

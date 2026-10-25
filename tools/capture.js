@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Capture a live site with Playwright/Chromium: computed styles, fonts, motion and a screenshot.
-// Usage: node tools/capture.js <url> <out-dir> [--width 1440] [--height 900]
+// Usage: node tools/capture.js <url> <out-dir> [--width 1440] [--height 900] [--nofull]
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
@@ -55,7 +55,7 @@ const width = opt('width', 1440), height = opt('height', 900);
 
   fs.writeFileSync(path.join(outDir, 'capture.json'), JSON.stringify({ url, capturedAt: new Date().toISOString(), viewport: { width, height }, ...data }, null, 2));
   await page.screenshot({ path: path.join(outDir, 'viewport.png') });
-  await page.screenshot({ path: path.join(outDir, 'full.png'), fullPage: true }).catch(() => {});
+  if (!rest.includes('--nofull')) await page.screenshot({ path: path.join(outDir, 'full.png'), fullPage: true }).catch(() => {});
   await browser.close();
   console.log(`captured ${url} -> ${outDir}`);
 })().catch(e => { console.error('capture failed:', e.message); process.exit(1); });

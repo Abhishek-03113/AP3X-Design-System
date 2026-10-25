@@ -1,0 +1,25 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-25T08:25:16Z"
+  },
+  "title": "Resurf",
+  "namespace": "Resurf",
+  "libraries": [],
+  "sections": {},
+  "groups": [],
+  "assetGroups": {},
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Abhishek",
+    "via": "Claude Code",
+    "at": "2026-10-25T08:25:16Z",
+    "note": "Built from the public App Store listing art for Resurf (pixel-sampled colours); resurf.so was blocked by a bot challenge, so nothing was measured from the site."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "resurf",
+  "kind": "site",
+  "title": "Resurf site and store art",
+  "summary": "Personal context library for Mac, iPhone and iPad: airy white ground, two-tone headlines, tilted colour-coded chips, fading devices.",
+  "source": {
+    "name": "Resurf (App Store art)",
+    "url": "https://apps.apple.com/us/app/resurf-save-organize/id6782162097",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/resurf",
+    "method": "pixel sampling and visual reading of public App Store images; resurf.so was blocked by a bot challenge"
+  },
+  "tags": [
+    "site",
+    "app",
+    "productivity",
+    "light",
+    "apple"
+  ],
+  "tech": [
+    "next.js"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

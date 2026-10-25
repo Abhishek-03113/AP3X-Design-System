@@ -12,12 +12,13 @@ import os
 import sys
 
 import assets_decimals
+import assets_resurf
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KINDS = {"effect": "effects", "motion": "motions", "component": "components", "site": "sites"}
 REQUIRED = ["slug", "kind", "title", "summary", "source", "tags"]
 
-ASSETS = assets_decimals.ASSETS
+ASSETS = assets_decimals.ASSETS + assets_resurf.ASSETS
 
 PAGE = """<!doctype html>
 <html lang="en">

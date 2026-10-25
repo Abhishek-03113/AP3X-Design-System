@@ -11,9 +11,10 @@ import systems_c
 import systems_d
 import systems_e
 import systems_f
+import systems_g
 from ds_lib import build
 
-SYSTEMS = systems_a.SYSTEMS + systems_b.SYSTEMS + systems_c.SYSTEMS + systems_d.SYSTEMS + systems_e.SYSTEMS + systems_f.SYSTEMS
+SYSTEMS = systems_a.SYSTEMS + systems_b.SYSTEMS + systems_c.SYSTEMS + systems_d.SYSTEMS + systems_e.SYSTEMS + systems_f.SYSTEMS + systems_g.SYSTEMS
 
 
 def rgb(v, ground=(255, 255, 255)):
@@ -83,6 +84,7 @@ PAIRS = {
     "the-list": [("black", "page"), ("grey", "page"), ("grey", "panel"), ("graphite", "page")],
     "sam-thies": [("ink", "fog"), ("fog", "night"), ("ink", "haze")],
     "decimals": [("ink", "cream"), ("ink", "card"), ("paper", "ink"), ("ink-muted", "cream"), ("ink-soft", "cream"), ("ink", "blush"), ("pin-red", "cream")],
+    "resurf": [("ink", "ground"), ("ink-soft", "ground"), ("ink", "paper"), ("amber", "paper"), ("amber-text", "paper"), ("ember-text", "paper"), ("violet-text", "paper"), ("leaf-text", "paper"), ("paper", "azure"), ("ink-faint", "ground")],
     "seventeen": [("black", "white"), ("stone", "white"), ("black", "stone"), ("white", "brick"), ("white", "harbour"), ("black", "field"), ("black", "lime"), ("white", "ochre"), ("black", "lagoon"), ("black", "candy"), ("white", "cobalt"), ("white", "umber"), ("black", "lilac"), ("black", "aqua")],
 }
 

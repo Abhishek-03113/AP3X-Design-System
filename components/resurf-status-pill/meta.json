@@ -1,0 +1,26 @@
+{
+  "slug": "resurf-status-pill",
+  "kind": "component",
+  "title": "Status pill",
+  "summary": "Small reassurance pills: Local first, No account needed, Synced with iCloud, or your own AI key.",
+  "source": {
+    "name": "Resurf (App Store art)",
+    "url": "https://apps.apple.com/us/app/resurf-save-organize/id6782162097",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/resurf",
+    "method": "pixel sampling and visual reading of public App Store images; resurf.so was blocked by a bot challenge"
+  },
+  "tags": [
+    "pill",
+    "badge",
+    "trust"
+  ],
+  "tech": [
+    "css"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

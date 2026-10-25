@@ -1,0 +1,28 @@
+{
+  "slug": "tilted-chip-lift",
+  "kind": "effect",
+  "title": "Tilted chip lift",
+  "summary": "White pill chips rotated by different small angles with a soft diffuse shadow, scattered around a device.",
+  "source": {
+    "name": "Resurf (App Store art)",
+    "url": "https://apps.apple.com/us/app/resurf-save-organize/id6782162097",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/resurf",
+    "method": "pixel sampling and visual reading of public App Store images; resurf.so was blocked by a bot challenge"
+  },
+  "tags": [
+    "chips",
+    "shadow",
+    "rotation",
+    "scatter"
+  ],
+  "tech": [
+    "css transform",
+    "css box-shadow"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

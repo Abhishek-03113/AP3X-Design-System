@@ -1,0 +1,27 @@
+{
+  "slug": "resurf-tag-chip",
+  "kind": "component",
+  "title": "Tag chip",
+  "summary": "Colour-coded content-type chip (Notes, Voice notes, Links, Screenshots, Videos) with glyph and label.",
+  "source": {
+    "name": "Resurf (App Store art)",
+    "url": "https://apps.apple.com/us/app/resurf-save-organize/id6782162097",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/resurf",
+    "method": "pixel sampling and visual reading of public App Store images; resurf.so was blocked by a bot challenge"
+  },
+  "tags": [
+    "chip",
+    "tag",
+    "pill",
+    "content-type"
+  ],
+  "tech": [
+    "css"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

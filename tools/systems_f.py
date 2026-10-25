@@ -7,6 +7,7 @@ GF = "https://fonts.googleapis.com/css2?"
 decimals = {
     "slug": "decimals",
     "title": "Decimals",
+    "note": "Created from the public site https://www.decimals.co/ (found via a1.gallery); styles measured with Playwright on 2026-10-25.",
     "namespace": "Decimals",
     "source": {"url": "https://www.decimals.co/", "captured": CAPTURED},
     "fonts_href": GF + "family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap",

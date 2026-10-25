@@ -19,7 +19,7 @@
   "lastChange": {
     "by": "Abhishek",
     "via": "Claude Code",
-    "at": "2026-10-25T08:25:16Z",
-    "note": "Built from the public App Store listing art for Resurf (pixel-sampled colours); resurf.so was blocked by a bot challenge, so nothing was measured from the site."
+    "at": "2026-10-25T09:05:00Z",
+    "note": "Read from owner-supplied screenshots of resurf.so (2026-10-25) with sampled colours and measured sizes; the site blocks automated browsers, so no computed styles were captured."
   }
 }

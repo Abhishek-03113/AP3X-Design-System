@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nav soft fade</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--cream:#f8f8f8;--ground:#f8f8f8;--card:#efefef;--tile:#f3f3f3;--paper:#fffffd;--ink:#0f100d;--ink-button:#181614;--ink-title:#2b2b29;--ink-body:#6c6d6a;--ink-nav:#5a5a5a;--ink-muted:#767676;--ink-quiet:#7f7f7f;--ink-faint:#939393;--line:#e5e6e3;--chip:#dcdcdc;--grey-button:#eeeeee;--blue:#4078e8;--font-serif:'EB Garamond',Garamond,serif;--font-sans:'Inter',-apple-system,system-ui,sans-serif;--shadow-float:0 1px 2px rgba(0,0,0,.06),0 6px 18px rgba(0,0,0,.07);--shadow-tab:0 1px 2px rgba(0,0,0,.08)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.stage{height:280px;overflow:auto;border-radius:12px;background:var(--ground);position:relative}
+.nav{position:sticky;top:0;z-index:2;display:flex;gap:24px;padding:14px 24px;font:500 13px var(--font-sans);color:var(--ink-nav)}
+.nav::before{content:"";position:absolute;inset:0 0 -24px;z-index:-1;pointer-events:none;background:linear-gradient(#fff,rgba(248,248,248,0))}
+.blk{height:88px;margin:14px 24px;border-radius:14px;background:var(--card)}
+</style>
+</head>
+<body>
+<div class="stage"><div class="nav"><span>Story</span><span>Roadmap</span><span>Updates</span><span>Pricing</span></div><div class="blk"></div><div class="blk"></div><div class="blk"></div><div class="blk"></div></div><p>Scroll inside the frame.</p>
+</body>
+</html>

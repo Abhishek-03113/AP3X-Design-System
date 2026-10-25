@@ -1,0 +1,20 @@
+<!-- @dsCard group="Navigation" height=90 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--ground);margin:0;font-family:var(--font-sans)}
+.n{position:relative;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:14px 20px}
+.n::before{content:"";position:absolute;inset:0 0 -24px;z-index:-1;background:linear-gradient(#fff,rgba(248,248,248,0));pointer-events:none}
+.m{width:18px;height:18px;border-radius:5px;background:var(--ink-button);display:block}
+.l{display:flex;gap:24px;font:500 13px/20px var(--font-sans);color:var(--ink-nav)}
+.b{justify-self:end;display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 10px;border-radius:var(--radius-small);background:var(--ink-button);color:var(--paper);font:500 12px/1 var(--font-sans)}
+</style>
+</head>
+<body>
+<div class="n"><i class="m"></i><nav class="l"><span>Story</span><span>Roadmap</span><span>Updates</span><span>Pricing</span><span>Resources ⌄</span></nav><span class="b">Get Resurf ⌄</span></div>
+</body>
+</html>

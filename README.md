@@ -39,7 +39,7 @@ The existing **Apple HIG** system (https://claude.ai/artifact/TiFCULRVtSBGMNiXwd
 | 1-800 Happy Birthday | [1800happybirthday.com](https://1800happybirthday.com/) | [open](https://claude.ai/artifact/BeipkYC32igWuajk9T8uyV) | `design-systems/1-800-happy-birthday` |
 | The List | [thelist.design](https://thelist.design/) | [open](https://claude.ai/artifact/Mc1G892WuvzaF9gMNAsf1Q) | `design-systems/the-list` |
 | Sam Thies | [samthies.com](https://samthies.com/) | [open](https://claude.ai/artifact/SF54upFXTSZUBvmebmDYJJ) | `design-systems/sam-thies` |
-| Decimals | [decimals.co](https://www.decimals.co/) | _pending_ | `design-systems/decimals` |
+| Decimals | [decimals.co](https://www.decimals.co/) | [open](https://claude.ai/artifact/Ctpb8dtodonas36BftuEDx) | `design-systems/decimals` |
 
 Two featured sites have no system: **partizan.com** blocks automated visitors (403), and **shirawiesenberg.com** currently shows a "domain not connected" placeholder instead of a site.
 

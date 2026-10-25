@@ -53,7 +53,8 @@ def write_asset(a):
     validate(meta)
     d = os.path.join(ROOT, KINDS[meta["kind"]], meta["slug"])
     os.makedirs(d, exist_ok=True)
-    meta = dict(meta, files=["meta.json", "README.md", "preview.html"])
+    base = ["meta.json", "README.md", "preview.html"]
+    meta = dict(meta, files=base + sorted(f for f in os.listdir(d) if f not in base))
     link = f'<link rel="stylesheet" href="{a["fonts"]}">\n' if a.get("fonts") else ""
     script = f"<script>\n{a['script'].strip()}\n</script>\n" if a.get("script") else ""
     html = PAGE.format(title=meta["title"], link=link, vars=a["vars"], css=a["css"].strip(), body=a["html"].strip(), script=script)

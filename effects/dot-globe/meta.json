@@ -1,0 +1,28 @@
+{
+  "slug": "dot-globe",
+  "kind": "effect",
+  "title": "Dot globe",
+  "summary": "Canvas dot sphere with faint meridians that auto-rotates, leans toward the pointer and pauses off-screen.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "canvas",
+    "globe",
+    "hero",
+    "pointer",
+    "recreation"
+  ],
+  "tech": [
+    "canvas 2d",
+    "intersection observer"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

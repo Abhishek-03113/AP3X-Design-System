@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stacking sticky cards</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+:root{--cream:#ede8e1;--card:#f3eee6;--paper:#fffdf8;--ink:#4d4638;--ink-deep:#16130e;--ink-muted:#6e685d;--blush:#f4c9be;--rose:#dda697;--font-sans:'Geist',Arial,system-ui,sans-serif;--font-serif:'Newsreader',Georgia,serif;--font-script:'La Belle Aurore',cursive;--ease-out:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.stage{height:380px;overflow:auto;border-radius:12px;background:var(--cream);position:relative;padding:16px}
+.row{position:sticky;top:16px;min-height:180px;margin-bottom:24px;padding:24px;border-radius:12px;background:var(--card);box-shadow:0 0 0 1px rgba(77,70,56,.12),0 8px 24px rgba(18,18,18,.06);transform-origin:center top;will-change:transform}
+.row h3{margin:0 0 6px;font:400 26px/1.2 var(--font-serif);letter-spacing:-.03em}
+.row p{margin:0;color:var(--ink-muted);max-width:40ch}
+.row:nth-child(2){background:#f6f1e9}.row:nth-child(3){background:#f9f4ec}.row:nth-child(4){background:#fbf7f0}
+.tail{height:280px}
+</style>
+</head>
+<body>
+<div class="stage" id="s"><article class="row"><h3>Find the best designer out there</h3><p>Every portfolio is reviewed by a scout first.</p></article><article class="row"><h3>Skip straight to the shortlist</h3><p>A curated handful worth meeting.</p></article><article class="row"><h3>Review handpicked intros</h3><p>Every intro comes through a scout they respect.</p></article><article class="row"><h3>On hand until the offer lands</h3><p>The last row never recedes.</p></article><div class="tail"></div></div><p>Scroll inside the frame.</p>
+<script>
+const stage = document.getElementById('s');
+const rows = [...stage.querySelectorAll('.row')];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+function update() {
+  const top = stage.getBoundingClientRect().top;
+  rows.forEach((row, i) => {
+    const next = rows[i + 1];
+    if (!next || reduce) return;
+    const stick = parseFloat(getComputedStyle(row).top);
+    const h = row.offsetHeight + 24;
+    const p = clamp(1 - (next.getBoundingClientRect().top - top - stick) / h);
+    const blur = 2 * clamp((p - 0.6) / 0.4);
+    row.style.transform = `translateY(${(-8 * p).toFixed(2)}px) scale(${(1 - 0.035 * p).toFixed(4)})`;
+    row.style.filter = blur > 0.01 ? `blur(${blur.toFixed(2)}px)` : 'none';
+  });
+}
+stage.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+update();
+</script>
+</body>
+</html>

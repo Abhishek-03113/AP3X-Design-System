@@ -81,7 +81,8 @@ Decimals is "a scout network for hiring designers". The site is a warm paper wor
 - Buttons are pills with a layered shadow stack (`shadow-pill-ink`, `shadow-pill-glass`); the glass variant adds `backdrop-filter: blur(10px)`.
 - Press feedback is a multiply radial that follows the pointer (see `effects/cta-press-glow`).
 - Hero content enters from `blur(12px)` at 30% opacity (`motions/hero-blur-reveal`); the logo strip is a 46s linear ticker under edge masks (`motions/logo-ticker`); two ambient blobs drift over 52s and 64s (`motions/ambient-drift`).
-- Easing is `cubic-bezier(0.22, 1, 0.36, 1)` for movement and plain `ease` for colour and opacity; durations are 0.15–0.34s. Reduced motion removes the ticker, drift and blur reveal.
+- Scroll (measured by stepping the page): the nav wordmark collapses into a monogram past about 55px (`motions/wordmark-collapse`); the four proof rows pin and recede under each other, scale 0.965, up 8px, blur 2px (`motions/stacking-sticky-cards`); the problem cards and closing CTA fade up 12px as they cross 95% of the viewport (`motions/scroll-fade-up`); the hero globe auto-rotates and leans toward the pointer (`effects/dot-globe`, a recreation). No scroll library is used, only CSS sticky, `IntersectionObserver` and scroll handlers.
+- Easing is `cubic-bezier(0.22, 1, 0.36, 1)` for movement and plain `ease` for colour and opacity; durations are 0.15–0.34s. Reduced motion removes the ticker, drift, blur reveal, sticky recede, fade-ups and wordmark swap.
 
 ## Imagery
 - No logos, portraits or illustrations were copied. Torn edges, halftone and cut-out portraits are described in the README of each component, not reproduced.

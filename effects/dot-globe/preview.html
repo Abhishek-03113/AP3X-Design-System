@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dot globe</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+:root{--cream:#ede8e1;--card:#f3eee6;--paper:#fffdf8;--ink:#4d4638;--ink-deep:#16130e;--ink-muted:#6e685d;--blush:#f4c9be;--rose:#dda697;--font-sans:'Geist',Arial,system-ui,sans-serif;--font-serif:'Newsreader',Georgia,serif;--font-script:'La Belle Aurore',cursive;--ease-out:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.wrap{position:relative;height:340px;border-radius:12px;overflow:hidden;background:var(--cream)}
+canvas{position:absolute;left:50%;bottom:-200px;transform:translateX(-50%);width:640px;height:640px;-webkit-mask-image:linear-gradient(#000 45%,transparent 80%);mask-image:linear-gradient(#000 45%,transparent 80%)}
+.t{position:relative;text-align:center;padding-top:44px;font:500 36px/1.15 var(--font-serif);letter-spacing:-.04em}
+</style>
+</head>
+<body>
+<div class="wrap" id="w"><canvas id="c" width="1280" height="1280"></canvas><div class="t">Hire designers who care</div></div>
+<script>
+const c = document.getElementById('c'), ctx = c.getContext('2d'), W = c.width, R = W * 0.42;
+const pts = Array.from({ length: 900 }, (_, i) => {
+  const y = 1 - (i / 899) * 2, r = Math.sqrt(1 - y * y), th = i * Math.PI * (3 - Math.sqrt(5));
+  return [Math.cos(th) * r, y, Math.sin(th) * r];
+});
+let rot = 0, tx = 0, ty = 0, cx = 0, cy = 0, run = true;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.getElementById('w').addEventListener('pointermove', e => {
+  const b = e.currentTarget.getBoundingClientRect();
+  tx = ((e.clientX - b.left) / b.width - .5) * .5; ty = ((e.clientY - b.top) / b.height - .5) * .3;
+});
+new IntersectionObserver(es => { run = es[0].isIntersecting; if (run) frame(); }).observe(c);
+function frame() {
+  if (!run) return;
+  cx += (tx - cx) * .06; cy += (ty - cy) * .06;
+  if (!reduce) rot += .0035;
+  ctx.clearRect(0, 0, W, W);
+  ctx.strokeStyle = 'rgba(77,70,56,.22)'; ctx.lineWidth = 2;
+  for (let k = -2; k <= 2; k++) { ctx.beginPath(); ctx.ellipse(W / 2, W / 2, R * Math.cos(k * .3), R, 0, 0, 7); ctx.stroke(); }
+  ctx.beginPath(); ctx.arc(W / 2, W / 2, R, 0, 7); ctx.stroke();
+  const a = rot + cx, b = cy, ca = Math.cos(a), sa = Math.sin(a), cb = Math.cos(b), sb = Math.sin(b);
+  for (const [x, y, z] of pts) {
+    const x1 = x * ca + z * sa, z1 = -x * sa + z * ca, y1 = y * cb - z1 * sb, z2 = y * sb + z1 * cb;
+    const s = 1 / (1.8 - z2 * .5);
+    ctx.fillStyle = `rgba(77,70,56,${z2 > 0 ? .75 : .18})`;
+    ctx.beginPath(); ctx.arc(W / 2 + x1 * R * s * 1.4, W / 2 + y1 * R * s * 1.4, z2 > 0 ? 3.2 : 2, 0, 7); ctx.fill();
+  }
+  if (!reduce) requestAnimationFrame(frame);
+}
+frame();
+</script>
+</body>
+</html>

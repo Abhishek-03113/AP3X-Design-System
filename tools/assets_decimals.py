@@ -364,7 +364,7 @@ Full system: `design-systems/decimals`.
 1. **Nav** (`components/decimals-nav-bar`): wordmark, four links, Get started + Log in; blur-fade backdrop (`effects/edge-fade-mask`).
 2. **Hero**: centred 56px serif headline "Hire designers who care through scouts that can tell", 18px subline, pill pair (`components/decimals-pill-button`). Content enters via `motions/hero-blur-reveal`. A dotted globe arc (canvas, `.v2-globe`) rises behind the buttons.
 3. **Logo ticker** (`motions/logo-ticker`): "From our network, hired by" caption over the marquee.
-4. **Proof rows** (`components/decimals-testimonial-row`): four alternating rows, each a company mark, serif claim, paragraph and a quote; section background fades in and out with a 340px mask.
+4. **Proof rows** (`components/decimals-testimonial-row`, stacked by `motions/stacking-sticky-cards`): four alternating rows, each a company mark, serif claim, paragraph and a quote; section background fades in and out with a 340px mask.
 5. **Problem section**: "Traditional recruiting stopped working" and three halftone-collage cards.
 6. **Closing CTA**: "Let's find your next designer", a single pill, three small tilted portrait cut-outs floating on a blush gradient.
 7. **Ambient layer** (`motions/ambient-drift`) behind everything.
@@ -372,9 +372,22 @@ Full system: `design-systems/decimals`.
 ## Tokens at a glance
 Ground `#ede8e1`, ink `#4d4638`, card `#f3eee6`, blush `#f4c9be`. Headlines Newsreader (martina on the site) -0.04em; text Geist 14px -0.14px.
 
+## Scroll choreography (measured by stepping the page, 1440×900)
+| Scroll position | What happens | Asset |
+| --- | --- | --- |
+| 0 → about 55px | Nav wordmark "DECIMALS" slides letter by letter into the monogram, which pops in with overshoot | `motions/wordmark-collapse` |
+| Hero | Dotted canvas globe auto-rotates, leans toward the pointer, pauses off-screen | `effects/dot-globe` |
+| About 690 → 2350px | The four proof rows pin at 120px; each recedes (scale 0.965, up 8px, blur 2px) as the next slides over it; the last stays crisp | `motions/stacking-sticky-cards` |
+| About 2250px | Problem cards fade up 12px as their top crosses 95% of the viewport | `motions/scroll-fade-up` |
+| About 2750px | Closing CTA panel does the same; its five portrait chips are static, tilted −8° to +7° | `motions/scroll-fade-up` |
+| End | A giant, low-contrast "DECIMALS" wordmark closes the page | (type only) |
+| Always | Blush glows drift behind a sticky layer; section backgrounds use fixed attachment with 220–340px edge masks | `motions/ambient-drift`, `effects/edge-fade-mask` |
+
+No scroll library was detected (no GSAP, ScrollTrigger or Lenis); the page uses CSS sticky, `IntersectionObserver` and plain scroll handlers. Scroll listeners counted: 15 `scroll`, 10 `wheel`, 13 `pointermove`.
+
 ## Notes
-- Hero globe is a canvas dot sphere with faint meridians; denser dots on the right limb. Not reproduced here beyond the cover sketch.
-- Honour `prefers-reduced-motion`: ticker, drift and blur reveal all switch off.
+- The globe's source was not extracted; `effects/dot-globe` is a recreation of the observed behaviour.
+- Honour `prefers-reduced-motion`: ticker, drift, blur reveal, sticky recede, fade-ups and the wordmark swap all switch off.
 """,
     """
 .frame{border-radius:12px;overflow:hidden;background:var(--cream);box-shadow:0 0 0 1px rgba(77,70,56,.2)}
@@ -390,3 +403,209 @@ h1{margin:0 auto 10px;max-width:15ch;font:500 44px/1.15 var(--font-serif);letter
 .sec h2{margin:0 0 6px;font:400 24px/1.3 var(--font-serif);letter-spacing:-.03em}
 """,
     '<div class="frame"><div class="nav"><span class="w">STUDIO</span><span class="pill">Get started</span></div><div class="hero"><div class="globe"></div><h1>Hire designers who care</h1><p>A scout network for hiring designers</p><span class="pill">Get started</span></div><div class="sec"><h2>Traditional recruiting stopped working</h2><p>Layout sketch only: see the README for the full page structure.</p></div></div>'))
+
+# ------------------------------------------------------------------ scroll motion (captured with tools/capture-scroll.js)
+SCROLL_NOTE = ("Measured on 2026-10-25 by stepping the live page down at 1440×900 and sampling computed transform, opacity and filter "
+               "(tools/capture-scroll.js, plus 10–60px fine scans). Values marked *derived* are fitted to those samples.")
+
+ASSETS.append(asset(
+    meta("motion", "stacking-sticky-cards", "Stacking sticky cards", "Proof rows pin one after another; each shrinks to 0.965, lifts 8px and blurs 2px as the next row slides over it.",
+         ["scroll", "sticky", "stack", "blur", "scale"], ["css position:sticky", "scroll listener"]),
+    f"""
+# Stacking sticky cards
+
+{SCROLL_NOTE}
+
+Each row is `position:sticky; top:120px` with `will-change:transform; transform-origin:center top`. When the *next* row rises into it, the pinned row recedes. The last row never recedes.
+
+## Progress
+`p` is how far the next row has climbed into the pinned one: `p = clamp(1 − (nextTop − stickTop) / rowHeight, 0, 1)` (*derived*: p is 0 when the next row sits one row-height (about 472px at 1440) below the pin line and 1 when it reaches it).
+
+| Property | Value |
+| --- | --- |
+| scale | `1 − 0.035·p` (1 → 0.965) |
+| translateY | `−8px·p` |
+| blur | `2px · clamp((p − 0.6) / 0.4, 0, 1)`: blur only starts after 60% (*derived* from four samples, error < 0.02px) |
+| origin | `center top` |
+| easing | none; the value follows scroll directly |
+
+Measured samples (row 1): scale 0.9877 / ty −2.82 / no blur, scale 0.9705 / ty −6.74 / blur 1.21px, scale 0.965 / ty −8 / blur 2px.
+
+Reduced motion: leave the cards stacked with no transform.
+""",
+    """
+.stage{height:380px;overflow:auto;border-radius:12px;background:var(--cream);position:relative;padding:16px}
+.row{position:sticky;top:16px;min-height:180px;margin-bottom:24px;padding:24px;border-radius:12px;background:var(--card);box-shadow:0 0 0 1px rgba(77,70,56,.12),0 8px 24px rgba(18,18,18,.06);transform-origin:center top;will-change:transform}
+.row h3{margin:0 0 6px;font:400 26px/1.2 var(--font-serif);letter-spacing:-.03em}
+.row p{margin:0;color:var(--ink-muted);max-width:40ch}
+.row:nth-child(2){background:#f6f1e9}.row:nth-child(3){background:#f9f4ec}.row:nth-child(4){background:#fbf7f0}
+.tail{height:280px}
+""",
+    '<div class="stage" id="s"><article class="row"><h3>Find the best designer out there</h3><p>Every portfolio is reviewed by a scout first.</p></article><article class="row"><h3>Skip straight to the shortlist</h3><p>A curated handful worth meeting.</p></article><article class="row"><h3>Review handpicked intros</h3><p>Every intro comes through a scout they respect.</p></article><article class="row"><h3>On hand until the offer lands</h3><p>The last row never recedes.</p></article><div class="tail"></div></div><p>Scroll inside the frame.</p>',
+    """
+const stage = document.getElementById('s');
+const rows = [...stage.querySelectorAll('.row')];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+function update() {
+  const top = stage.getBoundingClientRect().top;
+  rows.forEach((row, i) => {
+    const next = rows[i + 1];
+    if (!next || reduce) return;
+    const stick = parseFloat(getComputedStyle(row).top);
+    const h = row.offsetHeight + 24;
+    const p = clamp(1 - (next.getBoundingClientRect().top - top - stick) / h);
+    const blur = 2 * clamp((p - 0.6) / 0.4);
+    row.style.transform = `translateY(${(-8 * p).toFixed(2)}px) scale(${(1 - 0.035 * p).toFixed(4)})`;
+    row.style.filter = blur > 0.01 ? `blur(${blur.toFixed(2)}px)` : 'none';
+  });
+}
+stage.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+update();
+"""))
+
+ASSETS.append(asset(
+    meta("motion", "scroll-fade-up", "Scroll fade up", "Sections hold at opacity 0 and 12px low, then rise in over about 0.45s when their top crosses 95% of the viewport.",
+         ["scroll", "reveal", "fade", "intersection-observer"], ["intersection observer", "css transition"]),
+    f"""
+# Scroll fade up
+
+{SCROLL_NOTE}
+
+Used on the problem-cards block and the closing CTA panel. It is a one-shot reveal, not scroll-linked: scrolling back up does not hide them again.
+
+| Property | Value |
+| --- | --- |
+| hidden state | `opacity:0; transform:translateY(12px)` |
+| trigger | element top crosses about 95% of viewport height (opacity began rising at top 843–857 px in a 900px viewport) |
+| duration | about 0.45s (opacity reached 0.99 about 0.4s after the first change) |
+| easing | opacity and translate follow the same curve (translateY = 12px·(1 − opacity) at every sample); `cubic-bezier(.22,1,.36,1)` used here, *derived*, not read directly |
+
+```js
+new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('in')),
+                         {{ rootMargin: '0px 0px -5% 0px' }});
+```
+
+Reduced motion: show at once.
+""",
+    """
+.stage{height:360px;overflow:auto;border-radius:12px;background:var(--cream);padding:16px}
+.spacer{height:300px;display:grid;place-items:center;color:var(--ink-muted)}
+.fu{opacity:0;transform:translateY(12px);transition:opacity .45s var(--ease-out),transform .45s var(--ease-out);margin:0 0 16px;padding:24px;border-radius:8px;background:var(--card)}
+.fu.in{opacity:1;transform:none}
+.fu h3{margin:0 0 6px;font:400 24px/1.2 var(--font-serif);letter-spacing:-.03em}
+.fu p{margin:0;color:var(--ink-muted)}
+@media (prefers-reduced-motion:reduce){.fu{opacity:1;transform:none;transition:none}}
+""",
+    '<div class="stage" id="s"><div class="spacer">Scroll down ↓</div><div class="fu"><h3>Inbound applications overwhelm</h3><p>Up to a thousand applicants per role.</p></div><div class="fu"><h3>Hiring becomes a second job</h3><p>Reviewing eats the time you should spend on product.</p></div><div class="fu"><h3>The bar keeps rising</h3><p>The gap between good and great is widening.</p></div><div class="spacer"></div></div>',
+    """
+const root = document.getElementById('s');
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }),
+  { root, rootMargin: '0px 0px -5% 0px' });
+root.querySelectorAll('.fu').forEach(el => io.observe(el));
+"""))
+
+ASSETS.append(asset(
+    meta("motion", "wordmark-collapse", "Wordmark collapse", "Past about 55px of scroll the nav wordmark slides letter by letter into its monogram, which pops in with a small overshoot.",
+         ["scroll", "nav", "logo", "stagger", "overshoot"], ["css transition", "scroll threshold"]),
+    f"""
+# Wordmark collapse
+
+{SCROLL_NOTE}
+
+At the top the nav shows the full wordmark. Between 50px and 59px of scroll (threshold *derived* from the two samples that bracket it) a class flips and the letters slide left into the monogram, then reverse on return.
+
+## Letters (DECIMALS)
+| Letter | translateX when collapsed | delay |
+| --- | --- | --- |
+| D | none (fades in place) | 0.06s |
+| E | −11.96px | 0.11s |
+| C | −23.92px | 0.132s |
+| I, M, A, L, S | −35.88 … −83.72px (−11.96px × index) | 0.154s … 0.242s (+0.022s each) |
+
+Each letter: `transition: opacity .24s ease, transform .34s cubic-bezier(.22,1,.36,1)`; collapsed `opacity:0`.
+
+## Monogram
+Hidden: `opacity:0; transform:translateY(-10px) scale(.82)`. Shown: `opacity:1; scale(1)`. `transition: opacity .22s ease, transform .3s cubic-bezier(.34,1.36,.64,1)`: the 1.36 control point gives the overshoot (scale reached 1.0045 before settling).
+
+Reduced motion: swap without transitions.
+""",
+    """
+.stage{height:300px;overflow:auto;border-radius:12px;background:var(--cream);position:relative}
+.nav{position:sticky;top:0;z-index:2;height:64px;display:flex;align-items:center;padding:0 24px;background:linear-gradient(rgba(237,232,225,.9),rgba(237,232,225,.6))}
+.wm{position:relative;display:inline-flex;align-items:center;height:32px}
+.wm i{font:500 22px/1 var(--font-serif);font-style:normal;letter-spacing:.1em;display:inline-block;transition:opacity .24s ease,transform .34s var(--ease-out)}
+.mark{position:absolute;left:0;width:32px;height:32px;border:2px solid var(--ink);border-radius:8px;display:grid;place-items:center;font:500 16px/1 var(--font-serif);opacity:0;transform:translateY(-10px) scale(.82);transition:opacity .22s ease,transform .3s cubic-bezier(.34,1.36,.64,1)}
+.nav.compact .wm i{opacity:0}
+.nav.compact .mark{opacity:1;transform:translateY(-10px) scale(1)}
+.fill{height:900px;padding:24px;color:var(--ink-muted)}
+@media (prefers-reduced-motion:reduce){.wm i,.mark{transition:none}}
+""",
+    '<div class="stage" id="s"><div class="nav" id="n"><div class="wm" id="w"><span class="mark">DI</span></div></div><div class="fill">Scroll down past ~56px.</div></div>',
+    """
+const w = document.getElementById('w'), nav = document.getElementById('n'), stage = document.getElementById('s');
+[...'DECIMALS'].forEach((ch, i) => {
+  const el = document.createElement('i');
+  el.textContent = ch;
+  el.style.transitionDelay = (i === 0 ? 0.06 : 0.11 + (i - 1) * 0.022).toFixed(3) + 's';
+  el.dataset.i = i;
+  w.appendChild(el);
+});
+const apply = on => {
+  nav.classList.toggle('compact', on);
+  w.querySelectorAll('i').forEach(el => { el.style.transform = on && el.dataset.i > 0 ? `translateX(${(-11.96 * el.dataset.i).toFixed(2)}px)` : ''; });
+};
+stage.addEventListener('scroll', () => apply(stage.scrollTop > 56), { passive: true });
+"""))
+
+ASSETS.append(asset(
+    meta("effect", "dot-globe", "Dot globe", "Canvas dot sphere with faint meridians that auto-rotates, leans toward the pointer and pauses off-screen.",
+         ["canvas", "globe", "hero", "pointer", "recreation"], ["canvas 2d", "intersection observer"]),
+    f"""
+# Dot globe
+
+**Recreation, not a copy.** On decimals.co a canvas globe (`.v2-globe canvas`, observed by an `IntersectionObserver`) sits behind the hero. Measured: its frame changes while idle (it rotates) and changes again when the pointer moves (it reacts). Its source was not extracted, so this preview is an original implementation of that behaviour; the dot density, speed and lean are my choices. The site's globe is denser on its right limb; this one is evenly distributed.
+
+- Fibonacci-sphere points, perspective-projected, back-face dots dimmed.
+- Slow Y rotation; pointer position adds a small eased X/Y offset.
+- Draws only while visible (IntersectionObserver) and stops under `prefers-reduced-motion`.
+- Ink `#4d4638` dots over a hairline meridian at 22% ink.
+""",
+    """
+.wrap{position:relative;height:340px;border-radius:12px;overflow:hidden;background:var(--cream)}
+canvas{position:absolute;left:50%;bottom:-200px;transform:translateX(-50%);width:640px;height:640px;-webkit-mask-image:linear-gradient(#000 45%,transparent 80%);mask-image:linear-gradient(#000 45%,transparent 80%)}
+.t{position:relative;text-align:center;padding-top:44px;font:500 36px/1.15 var(--font-serif);letter-spacing:-.04em}
+""",
+    '<div class="wrap" id="w"><canvas id="c" width="1280" height="1280"></canvas><div class="t">Hire designers who care</div></div>',
+    """
+const c = document.getElementById('c'), ctx = c.getContext('2d'), W = c.width, R = W * 0.42;
+const pts = Array.from({ length: 900 }, (_, i) => {
+  const y = 1 - (i / 899) * 2, r = Math.sqrt(1 - y * y), th = i * Math.PI * (3 - Math.sqrt(5));
+  return [Math.cos(th) * r, y, Math.sin(th) * r];
+});
+let rot = 0, tx = 0, ty = 0, cx = 0, cy = 0, run = true;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.getElementById('w').addEventListener('pointermove', e => {
+  const b = e.currentTarget.getBoundingClientRect();
+  tx = ((e.clientX - b.left) / b.width - .5) * .5; ty = ((e.clientY - b.top) / b.height - .5) * .3;
+});
+new IntersectionObserver(es => { run = es[0].isIntersecting; if (run) frame(); }).observe(c);
+function frame() {
+  if (!run) return;
+  cx += (tx - cx) * .06; cy += (ty - cy) * .06;
+  if (!reduce) rot += .0035;
+  ctx.clearRect(0, 0, W, W);
+  ctx.strokeStyle = 'rgba(77,70,56,.22)'; ctx.lineWidth = 2;
+  for (let k = -2; k <= 2; k++) { ctx.beginPath(); ctx.ellipse(W / 2, W / 2, R * Math.cos(k * .3), R, 0, 0, 7); ctx.stroke(); }
+  ctx.beginPath(); ctx.arc(W / 2, W / 2, R, 0, 7); ctx.stroke();
+  const a = rot + cx, b = cy, ca = Math.cos(a), sa = Math.sin(a), cb = Math.cos(b), sb = Math.sin(b);
+  for (const [x, y, z] of pts) {
+    const x1 = x * ca + z * sa, z1 = -x * sa + z * ca, y1 = y * cb - z1 * sb, z2 = y * sb + z1 * cb;
+    const s = 1 / (1.8 - z2 * .5);
+    ctx.fillStyle = `rgba(77,70,56,${z2 > 0 ? .75 : .18})`;
+    ctx.beginPath(); ctx.arc(W / 2 + x1 * R * s * 1.4, W / 2 + y1 * R * s * 1.4, z2 > 0 ? 3.2 : 2, 0, 7); ctx.fill();
+  }
+  if (!reduce) requestAnimationFrame(frame);
+}
+frame();
+"""))

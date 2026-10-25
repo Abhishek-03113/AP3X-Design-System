@@ -24,6 +24,7 @@
   "files": [
     "meta.json",
     "README.md",
-    "preview.html"
+    "preview.html",
+    "scroll-capture.json"
   ]
 }

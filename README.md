@@ -59,6 +59,7 @@ python3 tools/build.py              # rebuild every system and print contrast ra
 python3 tools/build.py flowlife     # rebuild one system by slug
 python3 tools/assets.py             # rebuild effects/, motions/, components/, sites/ and the asset table
 node tools/capture.js <url> <dir>   # measure a live site with Playwright (styles, motion, screenshots)
+node tools/capture-scroll.js <url> <dir>  # step down the page and record scroll-linked transforms, IntersectionObservers and listeners
 ```
 
 To push a change to an artifact, republish the changed `project/` files to that system's URL (index last).
@@ -74,11 +75,15 @@ Effects, motions, components and site designs are stored one per folder, with a 
 | [Pill button pair](components/decimals-pill-button) | component | Filled ink and glass call-to-action pills, 36px and 48px, with the layered shadow stack. | [decimals.co](https://www.decimals.co/) | button, cta, pill |
 | [Testimonial row](components/decimals-testimonial-row) | component | Two-column proof row: copy and pinned quote beside a blush portrait panel with a handwritten tag. | [decimals.co](https://www.decimals.co/) | card, testimonial, content |
 | [CTA press glow](effects/cta-press-glow) | effect | Button that tilts toward the pointer on press while a multiply glow follows the touch point. | [decimals.co](https://www.decimals.co/) | interaction, button, 3d, pointer |
+| [Dot globe](effects/dot-globe) | effect | Canvas dot sphere with faint meridians that auto-rotates, leans toward the pointer and pauses off-screen. | [decimals.co](https://www.decimals.co/) | canvas, globe, hero, pointer, recreation |
 | [Edge fade mask](effects/edge-fade-mask) | effect | Blur-and-tint gradient masked to transparent so a sticky bar dissolves into the page with no visible edge. | [decimals.co](https://www.decimals.co/) | mask, blur, nav, gradient |
 | [Glass pill depth](effects/glass-pill-depth) | effect | Layered shadow stack that gives pill buttons a pressed-paper, lit-from-above depth, in ink and glass variants. | [decimals.co](https://www.decimals.co/) | shadow, button, glass, light |
 | [Ambient drift](motions/ambient-drift) | motion | Two huge blush radial blobs drifting on 52s and 64s ease-in-out loops behind sticky page content. | [decimals.co](https://www.decimals.co/) | background, loop, ambient, gradient |
 | [Float in](motions/float-in) | motion | Ten-pixel rise with fade, plus a slow ping-ring for live indicators. | [decimals.co](https://www.decimals.co/) | entrance, fade, indicator |
 | [Hero blur reveal](motions/hero-blur-reveal) | motion | Hero content enters from 30% opacity and a 12px blur, with a CSS-only fallback that reveals it after 2.6s. | [decimals.co](https://www.decimals.co/) | entrance, blur, hero, progressive-enhancement |
 | [Logo ticker](motions/logo-ticker) | motion | Endless 46s linear marquee under edge masks that pauses on hover and dims everything except the hovered mark. | [decimals.co](https://www.decimals.co/) | marquee, loop, hover, mask |
+| [Scroll fade up](motions/scroll-fade-up) | motion | Sections hold at opacity 0 and 12px low, then rise in over about 0.45s when their top crosses 95% of the viewport. | [decimals.co](https://www.decimals.co/) | scroll, reveal, fade, intersection-observer |
+| [Stacking sticky cards](motions/stacking-sticky-cards) | motion | Proof rows pin one after another; each shrinks to 0.965, lifts 8px and blurs 2px as the next row slides over it. | [decimals.co](https://www.decimals.co/) | scroll, sticky, stack, blur, scale |
+| [Wordmark collapse](motions/wordmark-collapse) | motion | Past about 55px of scroll the nav wordmark slides letter by letter into its monogram, which pops in with a small overshoot. | [decimals.co](https://www.decimals.co/) | scroll, nav, logo, stagger, overshoot |
 | [Decimals site](sites/decimals) | site | Warm-paper recruiting site: dotted-globe hero, logo ticker, alternating proof rows, torn-paper problem cards, ambient glow. | [decimals.co](https://www.decimals.co/) | site, landing, recruiting, warm, serif |
 <!-- assets:end -->

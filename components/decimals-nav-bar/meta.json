@@ -1,0 +1,25 @@
+{
+  "slug": "decimals-nav-bar",
+  "kind": "component",
+  "title": "Nav bar",
+  "summary": "Three-zone floating nav (wordmark, links, pills) over a blur-fade gradient.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "navigation",
+    "header",
+    "sticky"
+  ],
+  "tech": [
+    "css"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

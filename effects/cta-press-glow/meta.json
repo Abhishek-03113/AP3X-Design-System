@@ -1,0 +1,28 @@
+{
+  "slug": "cta-press-glow",
+  "kind": "effect",
+  "title": "CTA press glow",
+  "summary": "Button that tilts toward the pointer on press while a multiply glow follows the touch point.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "interaction",
+    "button",
+    "3d",
+    "pointer"
+  ],
+  "tech": [
+    "css custom properties",
+    "pointer events",
+    "mix-blend-mode"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

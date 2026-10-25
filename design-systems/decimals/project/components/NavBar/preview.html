@@ -1,0 +1,24 @@
+<!-- @dsCard group="Navigation" height=90 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--cream);margin:0;font-family:var(--font-sans)}
+.n{position:relative;display:flex;align-items:center;justify-content:space-between;padding:20px 32px}
+.n::before{content:"";position:absolute;inset:0 0 -36px;z-index:-1;background:linear-gradient(rgba(237,232,225,.78),rgba(237,232,225,.55) 55%,rgba(237,232,225,0));backdrop-filter:blur(12px);-webkit-mask-image:linear-gradient(#000 50%,transparent);mask-image:linear-gradient(#000 50%,transparent)}
+.w{font:500 22px/1 var(--font-serif);letter-spacing:.12em;color:var(--ink)}
+.l{display:flex;gap:20px;font:400 14px/21px var(--font-sans);letter-spacing:-.14px;color:var(--ink-soft)}
+.l a{padding:12px 8px;transition:color .2s}.l a:hover{color:var(--ink)}
+.p{display:flex;gap:8px}
+.p span{height:36px;padding:0 16px;border-radius:999px;display:inline-flex;align-items:center;font:500 14px var(--font-sans);letter-spacing:-.14px}
+.a{background:var(--ink);color:var(--paper);box-shadow:var(--shadow-pill-ink)}
+.b{background:rgba(255,253,248,.55);color:var(--ink);border:1px solid rgba(77,70,56,.25);box-shadow:var(--shadow-pill-glass)}
+</style>
+</head>
+<body>
+<div class="n"><span class="w">DECIMALS</span><nav class="l"><a>How it works</a><a>Placements</a><a>Become a Scout</a><a>Blog</a></nav><div class="p"><span class="a">Get started</span><span class="b">Log in</span></div></div>
+</body>
+</html>

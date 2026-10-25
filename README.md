@@ -1,6 +1,6 @@
 # AP3X Design System
 
-33 Claude Design Systems, each distilled from a site featured on [Site of Sites](https://www.siteofsites.co/?p=1). Every folder under `design-systems/<slug>/project/` is the exact file tree of a published Claude Design System artifact: `design-system.json` (index), `tokens.json`, a `README.md` brand book, three component previews and a cover.
+34 Claude Design Systems, 33 distilled from sites featured on [Site of Sites](https://www.siteofsites.co/?p=1) plus Decimals (from [a1.gallery](https://www.a1.gallery/)). Every folder under `design-systems/<slug>/project/` is the exact file tree of a published Claude Design System artifact: `design-system.json` (index), `tokens.json`, a `README.md` brand book, three component previews and a cover.
 
 The existing **Apple HIG** system (https://claude.ai/artifact/TiFCULRVtSBGMNiXwdaHtM) lives only as an artifact and is not touched by anything here.
 
@@ -39,6 +39,7 @@ The existing **Apple HIG** system (https://claude.ai/artifact/TiFCULRVtSBGMNiXwd
 | 1-800 Happy Birthday | [1800happybirthday.com](https://1800happybirthday.com/) | [open](https://claude.ai/artifact/BeipkYC32igWuajk9T8uyV) | `design-systems/1-800-happy-birthday` |
 | The List | [thelist.design](https://thelist.design/) | [open](https://claude.ai/artifact/Mc1G892WuvzaF9gMNAsf1Q) | `design-systems/the-list` |
 | Sam Thies | [samthies.com](https://samthies.com/) | [open](https://claude.ai/artifact/SF54upFXTSZUBvmebmDYJJ) | `design-systems/sam-thies` |
+| Decimals | [decimals.co](https://www.decimals.co/) | _pending_ | `design-systems/decimals` |
 
 Two featured sites have no system: **partizan.com** blocks automated visitors (403), and **shirawiesenberg.com** currently shows a "domain not connected" placeholder instead of a site.
 
@@ -56,6 +57,28 @@ Specs live in `tools/systems_a.py` … `tools/systems_e.py`; artifact URLs in `t
 ```sh
 python3 tools/build.py              # rebuild every system and print contrast ratios
 python3 tools/build.py flowlife     # rebuild one system by slug
+python3 tools/assets.py             # rebuild effects/, motions/, components/, sites/ and the asset table
+node tools/capture.js <url> <dir>   # measure a live site with Playwright (styles, motion, screenshots)
 ```
 
 To push a change to an artifact, republish the changed `project/` files to that system's URL (index last).
+
+## Individual assets
+
+Effects, motions, components and site designs are stored one per folder, with a standalone `preview.html` (open it directly in a browser), a `README.md` and a `meta.json`. Regenerate with `python3 tools/assets.py`.
+
+<!-- assets:start -->
+| Asset | Kind | What it is | Source | Tags |
+| --- | --- | --- | --- | --- |
+| [Nav bar](components/decimals-nav-bar) | component | Three-zone floating nav (wordmark, links, pills) over a blur-fade gradient. | [decimals.co](https://www.decimals.co/) | navigation, header, sticky |
+| [Pill button pair](components/decimals-pill-button) | component | Filled ink and glass call-to-action pills, 36px and 48px, with the layered shadow stack. | [decimals.co](https://www.decimals.co/) | button, cta, pill |
+| [Testimonial row](components/decimals-testimonial-row) | component | Two-column proof row: copy and pinned quote beside a blush portrait panel with a handwritten tag. | [decimals.co](https://www.decimals.co/) | card, testimonial, content |
+| [CTA press glow](effects/cta-press-glow) | effect | Button that tilts toward the pointer on press while a multiply glow follows the touch point. | [decimals.co](https://www.decimals.co/) | interaction, button, 3d, pointer |
+| [Edge fade mask](effects/edge-fade-mask) | effect | Blur-and-tint gradient masked to transparent so a sticky bar dissolves into the page with no visible edge. | [decimals.co](https://www.decimals.co/) | mask, blur, nav, gradient |
+| [Glass pill depth](effects/glass-pill-depth) | effect | Layered shadow stack that gives pill buttons a pressed-paper, lit-from-above depth, in ink and glass variants. | [decimals.co](https://www.decimals.co/) | shadow, button, glass, light |
+| [Ambient drift](motions/ambient-drift) | motion | Two huge blush radial blobs drifting on 52s and 64s ease-in-out loops behind sticky page content. | [decimals.co](https://www.decimals.co/) | background, loop, ambient, gradient |
+| [Float in](motions/float-in) | motion | Ten-pixel rise with fade, plus a slow ping-ring for live indicators. | [decimals.co](https://www.decimals.co/) | entrance, fade, indicator |
+| [Hero blur reveal](motions/hero-blur-reveal) | motion | Hero content enters from 30% opacity and a 12px blur, with a CSS-only fallback that reveals it after 2.6s. | [decimals.co](https://www.decimals.co/) | entrance, blur, hero, progressive-enhancement |
+| [Logo ticker](motions/logo-ticker) | motion | Endless 46s linear marquee under edge masks that pauses on hover and dims everything except the hovered mark. | [decimals.co](https://www.decimals.co/) | marquee, loop, hover, mask |
+| [Decimals site](sites/decimals) | site | Warm-paper recruiting site: dotted-globe hero, logo ticker, alternating proof rows, torn-paper problem cards, ambient glow. | [decimals.co](https://www.decimals.co/) | site, landing, recruiting, warm, serif |
+<!-- assets:end -->

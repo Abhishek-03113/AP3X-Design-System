@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pill button pair</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+:root{--cream:#ede8e1;--card:#f3eee6;--paper:#fffdf8;--ink:#4d4638;--ink-deep:#16130e;--ink-muted:#6e685d;--blush:#f4c9be;--rose:#dda697;--font-sans:'Geist',Arial,system-ui,sans-serif;--font-serif:'Newsreader',Georgia,serif;--font-script:'La Belle Aurore',cursive;--ease-out:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.b{height:36px;padding:0 16px;border-radius:999px;font:500 14px/1 var(--font-sans);letter-spacing:-.14px;cursor:pointer;transition:opacity .2s,transform .15s var(--ease-out)}
+.b:hover{opacity:.92}.b:active{transform:scale(.976)}
+.lg{height:48px;padding:0 22px}
+.ink{background:var(--ink);color:var(--paper);border:1px solid var(--ink);box-shadow:0 0 0 1px rgba(18,18,18,.22),0 1px 2px rgba(18,18,18,.13),0 2px 8px rgba(18,18,18,.07),inset 0 0 0 1px rgba(255,255,255,.08),inset 0 1px 0 rgba(255,255,255,.16)}
+.glass{background:rgba(255,253,248,.55) linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,0));color:var(--ink);border:1px solid rgba(77,70,56,.25);box-shadow:0 1px 2px rgba(18,18,18,.06),0 2px 6px rgba(18,18,18,.04),inset 0 1px 0 rgba(255,255,255,.75);backdrop-filter:blur(10px)}
+</style>
+</head>
+<body>
+<div class="row"><button class="b ink lg">Get started</button><button class="b glass lg">How it works</button><button class="b ink">Get started</button><button class="b glass">Log in</button></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Resurf</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--ground); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .cd{fill:var(--card)} .tl{fill:var(--tile)} .pp{fill:var(--paper)} .bt{fill:var(--ink-button)} .ln{fill:var(--chip)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-serif); font-size:64px; line-height:0.95; font-weight:500; letter-spacing:-0.02em; color:var(--ink);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--ink-muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      one grey feature card with a floating paper mini-UI, a dark button, two tag chips
+arrangement card centred on the right, button and chips overlapping its lower edge
+pattern     flat card (#efefef) + paper tile with soft shadow, as in the site's feature grid
+scales      radius-card 14, radius-button 8, pill chips
+-->
+<rect class="cd" x="96" y="40" width="288" height="208" rx="14"/>
+<rect class="pp" x="148" y="76" width="184" height="64" rx="10"/>
+<rect class="ln" x="164" y="92" width="112" height="8" rx="4"/><rect class="ln" x="164" y="110" width="76" height="8" rx="4"/>
+<rect class="tl" x="130" y="168" width="64" height="22" rx="11"/><rect class="tl" x="202" y="168" width="52" height="22" rx="11"/>
+<rect class="bt" x="262" y="204" width="104" height="28" rx="8"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Resurf</h1>
+<p class="tag">A personal context library.</p>
+</div>
+</div>
+</body>
+</html>

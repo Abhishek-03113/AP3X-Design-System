@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scroll fade up</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+:root{--cream:#ede8e1;--card:#f3eee6;--paper:#fffdf8;--ink:#4d4638;--ink-deep:#16130e;--ink-muted:#6e685d;--blush:#f4c9be;--rose:#dda697;--font-sans:'Geist',Arial,system-ui,sans-serif;--font-serif:'Newsreader',Georgia,serif;--font-script:'La Belle Aurore',cursive;--ease-out:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.stage{height:360px;overflow:auto;border-radius:12px;background:var(--cream);padding:16px}
+.spacer{height:300px;display:grid;place-items:center;color:var(--ink-muted)}
+.fu{opacity:0;transform:translateY(12px);transition:opacity .45s var(--ease-out),transform .45s var(--ease-out);margin:0 0 16px;padding:24px;border-radius:8px;background:var(--card)}
+.fu.in{opacity:1;transform:none}
+.fu h3{margin:0 0 6px;font:400 24px/1.2 var(--font-serif);letter-spacing:-.03em}
+.fu p{margin:0;color:var(--ink-muted)}
+@media (prefers-reduced-motion:reduce){.fu{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="stage" id="s"><div class="spacer">Scroll down ↓</div><div class="fu"><h3>Inbound applications overwhelm</h3><p>Up to a thousand applicants per role.</p></div><div class="fu"><h3>Hiring becomes a second job</h3><p>Reviewing eats the time you should spend on product.</p></div><div class="fu"><h3>The bar keeps rising</h3><p>The gap between good and great is widening.</p></div><div class="spacer"></div></div>
+<script>
+const root = document.getElementById('s');
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }),
+  { root, rootMargin: '0px 0px -5% 0px' });
+root.querySelectorAll('.fu').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

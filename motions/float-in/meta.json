@@ -1,0 +1,25 @@
+{
+  "slug": "float-in",
+  "kind": "motion",
+  "title": "Float in",
+  "summary": "Ten-pixel rise with fade, plus a slow ping-ring for live indicators.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "entrance",
+    "fade",
+    "indicator"
+  ],
+  "tech": [
+    "css animation"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

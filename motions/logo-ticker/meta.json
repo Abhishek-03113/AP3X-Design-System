@@ -1,0 +1,27 @@
+{
+  "slug": "logo-ticker",
+  "kind": "motion",
+  "title": "Logo ticker",
+  "summary": "Endless 46s linear marquee under edge masks that pauses on hover and dims everything except the hovered mark.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "marquee",
+    "loop",
+    "hover",
+    "mask"
+  ],
+  "tech": [
+    "css animation",
+    "mask-image"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Float in</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+:root{--cream:#ede8e1;--card:#f3eee6;--paper:#fffdf8;--ink:#4d4638;--ink-deep:#16130e;--ink-muted:#6e685d;--blush:#f4c9be;--rose:#dda697;--font-sans:'Geist',Arial,system-ui,sans-serif;--font-serif:'Newsreader',Georgia,serif;--font-script:'La Belle Aurore',cursive;--ease-out:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.card{width:260px;padding:20px;border-radius:8px;background:var(--card);animation:float-in .5s var(--ease-out) both}
+.card:nth-child(2){animation-delay:.1s}.card:nth-child(3){animation-delay:.2s}
+.wrap{display:flex;gap:16px}
+.live{position:relative;display:inline-block;width:10px;height:10px;border-radius:50%;background:#438f31;margin-right:10px}
+.live::after{content:"";position:absolute;inset:0;border-radius:50%;background:#438f31;animation:ping-slow 2s ease-out infinite}
+@keyframes float-in{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes ping-slow{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(2.4)}}
+@media (prefers-reduced-motion:reduce){.card,.live::after{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card"><span class="live"></span>Scouts online</div><div class="card">Curated shortlist</div><div class="card">Offer support</div></div>
+</body>
+</html>

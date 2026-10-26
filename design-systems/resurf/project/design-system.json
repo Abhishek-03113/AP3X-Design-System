@@ -1,0 +1,25 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-25T08:25:16Z"
+  },
+  "title": "Resurf",
+  "namespace": "Resurf",
+  "libraries": [],
+  "sections": {},
+  "groups": [],
+  "assetGroups": {},
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Abhishek",
+    "via": "Claude Code",
+    "at": "2026-10-25T09:05:00Z",
+    "note": "Read from owner-supplied screenshots of resurf.so (2026-10-25) with sampled colours and measured sizes; the site blocks automated browsers, so no computed styles were captured."
+  }
+}

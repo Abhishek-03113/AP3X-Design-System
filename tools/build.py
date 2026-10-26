@@ -10,9 +10,11 @@ import systems_b
 import systems_c
 import systems_d
 import systems_e
+import systems_f
+import systems_g
 from ds_lib import build
 
-SYSTEMS = systems_a.SYSTEMS + systems_b.SYSTEMS + systems_c.SYSTEMS + systems_d.SYSTEMS + systems_e.SYSTEMS
+SYSTEMS = systems_a.SYSTEMS + systems_b.SYSTEMS + systems_c.SYSTEMS + systems_d.SYSTEMS + systems_e.SYSTEMS + systems_f.SYSTEMS + systems_g.SYSTEMS
 
 
 def rgb(v, ground=(255, 255, 255)):
@@ -81,6 +83,8 @@ PAIRS = {
     "1-800-happy-birthday": [("night", "sun"), ("toffee", "sun"), ("cloud", "candy"), ("night", "cloud")],
     "the-list": [("black", "page"), ("grey", "page"), ("grey", "panel"), ("graphite", "page")],
     "sam-thies": [("ink", "fog"), ("fog", "night"), ("ink", "haze")],
+    "decimals": [("ink", "cream"), ("ink", "card"), ("paper", "ink"), ("ink-muted", "cream"), ("ink-soft", "cream"), ("ink", "blush"), ("pin-red", "cream")],
+    "resurf": [("ink", "ground"), ("ink-title", "card"), ("ink-body", "ground"), ("ink-body", "card"), ("ink-nav", "ground"), ("ink-muted", "ground"), ("ink-muted", "card"), ("ink-quiet", "ground"), ("ink-faint", "ground"), ("paper", "ink-button"), ("ink-title", "grey-button"), ("blue", "paper")],
     "seventeen": [("black", "white"), ("stone", "white"), ("black", "stone"), ("white", "brick"), ("white", "harbour"), ("black", "field"), ("black", "lime"), ("white", "ochre"), ("black", "lagoon"), ("black", "candy"), ("white", "cobalt"), ("white", "umber"), ("black", "lilac"), ("black", "aqua")],
 }
 

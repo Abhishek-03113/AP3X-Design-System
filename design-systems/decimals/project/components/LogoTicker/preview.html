@@ -1,0 +1,23 @@
+<!-- @dsCard group="Content" height=120 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--cream);padding:24px;font-family:var(--font-sans)}
+.cap{text-align:center;font:400 14px/21px var(--font-sans);color:var(--ink-muted);margin:0 0 12px}
+.t{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.k{display:flex;align-items:center;width:max-content;animation:tick 46s linear infinite}
+.t:hover .k{animation-play-state:paused}
+.k span{margin-right:64px;font:500 22px/1 var(--font-serif);color:var(--ink);opacity:.92;transition:opacity .25s}
+.k:hover span{opacity:.4}.k span:hover{opacity:1}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.k{animation:none}}
+</style>
+</head>
+<body>
+<p class="cap">Hired by teams at</p><div class="t"><div class="k"><span>Northwind</span><span>Fieldnote</span><span>Orbital</span><span>Lumen</span><span>Parcel</span><span>Quill</span><span>Northwind</span><span>Fieldnote</span><span>Orbital</span><span>Lumen</span><span>Parcel</span><span>Quill</span></div></div>
+</body>
+</html>

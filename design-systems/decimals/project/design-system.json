@@ -1,0 +1,25 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-25T07:46:10Z"
+  },
+  "title": "Decimals",
+  "namespace": "Decimals",
+  "libraries": [],
+  "sections": {},
+  "groups": [],
+  "assetGroups": {},
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Abhishek",
+    "via": "Claude Code",
+    "at": "2026-10-25T07:46:10Z",
+    "note": "Created from the public site https://www.decimals.co/ (found via a1.gallery); styles measured with Playwright on 2026-10-25."
+  }
+}

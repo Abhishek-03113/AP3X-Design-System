@@ -1,0 +1,52 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Decimals</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--cream); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .ln{fill:none;stroke:var(--ink);stroke-opacity:.28;stroke-width:1}
+  .dt{fill:var(--ink)} .gl{fill:var(--blush)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-serif); font-size:64px; line-height:0.95; font-weight:500; letter-spacing:-0.04em; color:var(--ink);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--ink-muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      blush glow disc, dotted globe arc with meridians, ink dots
+arrangement half-sphere rising from the bottom edge, as the site's hero globe does
+pattern     meridian ellipses + latitude arcs → dots scattered denser on the right limb
+scales      hairline 1px at 28% ink; dot radius 1.5
+-->
+<circle class="gl" cx="360" cy="300" r="190" opacity=".55"/>
+<circle class="ln" cx="360" cy="300" r="170"/>
+<ellipse class="ln" cx="360" cy="300" rx="120" ry="170"/>
+<ellipse class="ln" cx="360" cy="300" rx="60" ry="170"/>
+<path class="ln" d="M190 300 H530"/>
+<path class="ln" d="M205 240 Q360 215 515 240"/>
+<path class="ln" d="M240 185 Q360 165 480 185"/>
+<circle class="dt" cx="262" cy="196" r="1.5"/><circle class="dt" cx="298" cy="168" r="1.5"/><circle class="dt" cx="330" cy="204" r="1.5"/>
+<circle class="dt" cx="372" cy="152" r="1.5"/><circle class="dt" cx="410" cy="186" r="1.5"/><circle class="dt" cx="440" cy="158" r="1.5"/>
+<circle class="dt" cx="468" cy="190" r="1.5"/><circle class="dt" cx="486" cy="214" r="1.5"/><circle class="dt" cx="452" cy="232" r="1.5"/>
+<circle class="dt" cx="318" cy="248" r="1.5"/><circle class="dt" cx="396" cy="244" r="1.5"/><circle class="dt" cx="500" cy="248" r="1.5"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Decimals</h1>
+<p class="tag">A scout network for hiring designers.</p>
+</div>
+</div>
+</body>
+</html>

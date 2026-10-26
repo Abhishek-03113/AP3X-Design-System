@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Logo ticker</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+:root{--cream:#ede8e1;--card:#f3eee6;--paper:#fffdf8;--ink:#4d4638;--ink-deep:#16130e;--ink-muted:#6e685d;--blush:#f4c9be;--rose:#dda697;--font-sans:'Geist',Arial,system-ui,sans-serif;--font-serif:'Newsreader',Georgia,serif;--font-script:'La Belle Aurore',cursive;--ease-out:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.cap{text-align:center;color:var(--ink-muted);margin:0 0 12px}
+.t{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 10%,#000 90%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 10%,#000 90%,transparent 100%)}
+.k{display:flex;align-items:center;width:max-content;animation:tick 46s linear infinite}
+.t:hover .k{animation-play-state:paused}
+.k span{margin-right:64px;font:500 24px/1 var(--font-serif);color:var(--ink);opacity:.92;transition:opacity .25s,filter .25s}
+.k:hover span{opacity:.4}.k span:hover{opacity:1}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.k{animation:none}}
+</style>
+</head>
+<body>
+<p class="cap">Hired by teams at</p><div class="t"><div class="k"><span>Northwind</span><span>Fieldnote</span><span>Orbital</span><span>Lumen</span><span>Parcel</span><span>Quill</span><span>Northwind</span><span>Fieldnote</span><span>Orbital</span><span>Lumen</span><span>Parcel</span><span>Quill</span></div></div>
+</body>
+</html>

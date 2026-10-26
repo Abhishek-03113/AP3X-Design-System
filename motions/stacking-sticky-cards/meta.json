@@ -1,0 +1,28 @@
+{
+  "slug": "stacking-sticky-cards",
+  "kind": "motion",
+  "title": "Stacking sticky cards",
+  "summary": "Proof rows pin one after another; each shrinks to 0.965, lifts 8px and blurs 2px as the next row slides over it.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "scroll",
+    "sticky",
+    "stack",
+    "blur",
+    "scale"
+  ],
+  "tech": [
+    "css position:sticky",
+    "scroll listener"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

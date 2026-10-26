@@ -1,0 +1,25 @@
+{
+  "slug": "decimals-pill-button",
+  "kind": "component",
+  "title": "Pill button pair",
+  "summary": "Filled ink and glass call-to-action pills, 36px and 48px, with the layered shadow stack.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "button",
+    "cta",
+    "pill"
+  ],
+  "tech": [
+    "css"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

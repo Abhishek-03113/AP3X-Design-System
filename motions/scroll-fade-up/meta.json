@@ -1,0 +1,27 @@
+{
+  "slug": "scroll-fade-up",
+  "kind": "motion",
+  "title": "Scroll fade up",
+  "summary": "Sections hold at opacity 0 and 12px low, then rise in over about 0.45s when their top crosses 95% of the viewport.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "scroll",
+    "reveal",
+    "fade",
+    "intersection-observer"
+  ],
+  "tech": [
+    "intersection observer",
+    "css transition"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

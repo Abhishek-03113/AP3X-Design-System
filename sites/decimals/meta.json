@@ -1,0 +1,30 @@
+{
+  "slug": "decimals",
+  "kind": "site",
+  "title": "Decimals site",
+  "summary": "Warm-paper recruiting site: dotted-globe hero, logo ticker, alternating proof rows, torn-paper problem cards, ambient glow.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "site",
+    "landing",
+    "recruiting",
+    "warm",
+    "serif"
+  ],
+  "tech": [
+    "next.js",
+    "css",
+    "canvas"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html",
+    "scroll-capture.json"
+  ]
+}

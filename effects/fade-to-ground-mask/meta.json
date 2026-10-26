@@ -1,0 +1,27 @@
+{
+  "slug": "fade-to-ground-mask",
+  "kind": "effect",
+  "title": "Fade to ground mask",
+  "summary": "Device mockups dissolve into the page along their lower edge instead of sitting in a frame.",
+  "source": {
+    "name": "Resurf (App Store art)",
+    "url": "https://apps.apple.com/us/app/resurf-save-organize/id6782162097",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/resurf",
+    "method": "pixel sampling and visual reading of public App Store images; resurf.so was blocked by a bot challenge"
+  },
+  "tags": [
+    "mask",
+    "gradient",
+    "device",
+    "hero"
+  ],
+  "tech": [
+    "css mask-image"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

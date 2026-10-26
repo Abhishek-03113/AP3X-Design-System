@@ -108,7 +108,7 @@ def build(spec, when=None):
         "blobs": {},
         "docs": {"readme": "project/README.md", "sections": []},
         "lastChange": {"by": "Abhishek", "via": "Claude Code", "at": when,
-                       "note": f"Created from the public site {spec['source']['url']} (featured on siteofsites.co)."},
+                       "note": spec.get("note") or f"Created from the public site {spec['source']['url']} (featured on siteofsites.co)."},
     }
     write("design-system.json", json.dumps(index, indent=2, ensure_ascii=False) + "\n")
     return base

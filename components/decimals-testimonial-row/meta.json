@@ -1,0 +1,25 @@
+{
+  "slug": "decimals-testimonial-row",
+  "kind": "component",
+  "title": "Testimonial row",
+  "summary": "Two-column proof row: copy and pinned quote beside a blush portrait panel with a handwritten tag.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "card",
+    "testimonial",
+    "content"
+  ],
+  "tech": [
+    "css"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

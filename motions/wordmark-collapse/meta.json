@@ -1,0 +1,28 @@
+{
+  "slug": "wordmark-collapse",
+  "kind": "motion",
+  "title": "Wordmark collapse",
+  "summary": "Past about 55px of scroll the nav wordmark slides letter by letter into its monogram, which pops in with a small overshoot.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "scroll",
+    "nav",
+    "logo",
+    "stagger",
+    "overshoot"
+  ],
+  "tech": [
+    "css transition",
+    "scroll threshold"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

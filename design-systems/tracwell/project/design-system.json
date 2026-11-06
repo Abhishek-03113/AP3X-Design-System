@@ -1,0 +1,25 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-06T04:38:32Z"
+  },
+  "title": "Tracwell",
+  "namespace": "Tracwell",
+  "libraries": [],
+  "sections": {},
+  "groups": [],
+  "assetGroups": {},
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Abhishek",
+    "via": "Claude Code",
+    "at": "2026-11-06T04:38:32Z",
+    "note": "Created from the public site https://tracwell.app/ (compiled CSS plus a Playwright capture)."
+  }
+}

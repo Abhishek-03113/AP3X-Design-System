@@ -1,0 +1,26 @@
+<!-- @dsCard group="Status" height=110 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--background);padding:20px;font-family:var(--font-sans)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.row+.row{margin-top:14px}
+.s{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:var(--radius-pill);border:1px solid var(--border);background:var(--data-traffic-soft);color:var(--data-traffic-text);font:500 12px/16px var(--font-sans)}
+.s i{width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.d{padding:4px 8px;border-radius:var(--radius-pill);background:var(--success-soft);color:var(--success-text);font:500 12px/16px var(--font-sans)}
+.t{padding:2px 8px;border-radius:var(--radius-pill);font:500 10px/15px var(--font-sans)}
+.acq{background:var(--data-acquisition-soft);color:var(--data-acquisition-text)}
+.trf{background:var(--data-traffic-soft);color:var(--data-traffic-text)}
+.eng{background:var(--data-engagement-soft);color:var(--data-engagement-text)}
+.rev{background:var(--data-revenue-soft);color:var(--data-revenue-text)}
+</style>
+</head>
+<body>
+<div class="row"><span class="s"><i></i>Connected</span><span class="s"><i></i>Receiving</span><span class="d">+18.4%</span></div>
+<div class="row"><span class="t acq">AI fetch</span><span class="t trf">Indexing</span><span class="t eng">Training</span><span class="t rev">$290 purchase</span></div>
+</body>
+</html>

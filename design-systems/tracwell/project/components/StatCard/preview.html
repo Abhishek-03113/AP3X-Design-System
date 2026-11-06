@@ -1,0 +1,27 @@
+<!-- @dsCard group="Data" height=170 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--background);padding:16px;font-family:var(--font-sans)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;max-width:820px}
+.w{background:var(--well);border-radius:var(--radius-xl);padding:4px;box-shadow:var(--shadow-card)}
+.lb{font:500 12px/16px var(--font-sans);color:var(--muted-foreground);padding:6px 12px 6px}
+.in{background:var(--background);border-radius:var(--radius-lg);padding:12px 16px 8px}
+.v{font:500 30px/30px var(--font-sans);letter-spacing:-1.2px;color:var(--foreground);font-variant-numeric:tabular-nums}
+.d{font:500 12px/16px var(--font-sans);margin-top:6px}
+.up{color:var(--success-text)}
+.dn{color:var(--destructive)}
+</style>
+</head>
+<body>
+<div class="g">
+<div class="w"><div class="lb">Visitors</div><div class="in"><div class="v">8,420</div><div class="d up">↗ 12.4%</div></div></div>
+<div class="w"><div class="lb">Signups</div><div class="in"><div class="v">612</div><div class="d up">↗ 8.1%</div></div></div>
+<div class="w"><div class="lb">Revenue</div><div class="in"><div class="v">$18,940</div><div class="d dn">↘ 2.3%</div></div></div>
+</div>
+</body>
+</html>

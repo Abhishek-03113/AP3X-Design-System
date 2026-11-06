@@ -10,9 +10,10 @@ import systems_b
 import systems_c
 import systems_d
 import systems_e
+import systems_f
 from ds_lib import build
 
-SYSTEMS = systems_a.SYSTEMS + systems_b.SYSTEMS + systems_c.SYSTEMS + systems_d.SYSTEMS + systems_e.SYSTEMS
+SYSTEMS = systems_a.SYSTEMS + systems_b.SYSTEMS + systems_c.SYSTEMS + systems_d.SYSTEMS + systems_e.SYSTEMS + systems_f.SYSTEMS
 
 
 def rgb(v, ground=(255, 255, 255)):
@@ -81,6 +82,7 @@ PAIRS = {
     "1-800-happy-birthday": [("night", "sun"), ("toffee", "sun"), ("cloud", "candy"), ("night", "cloud")],
     "the-list": [("black", "page"), ("grey", "page"), ("grey", "panel"), ("graphite", "page")],
     "sam-thies": [("ink", "fog"), ("fog", "night"), ("ink", "haze")],
+    "tracwell": [("foreground", "background"), ("muted-foreground", "background"), ("muted-foreground", "surface"), ("muted-foreground", "well"), ("foreground-soft", "background"), ("primary-foreground", "primary"), ("secondary-foreground", "secondary"), ("destructive", "card"), ("success-text", "success-soft"), ("data-traffic-text", "data-traffic-soft"), ("data-revenue-text", "data-revenue-soft"), ("data-acquisition-text", "data-acquisition-soft"), ("data-engagement-text", "data-engagement-soft"), ("data-positive", "background"), ("foreground", "tint-blue"), ("foreground", "tint-mint"), ("terminal-text", "terminal"), ("terminal-dim", "terminal"), ("terminal-muted", "terminal")],
     "seventeen": [("black", "white"), ("stone", "white"), ("black", "stone"), ("white", "brick"), ("white", "harbour"), ("black", "field"), ("black", "lime"), ("white", "ochre"), ("black", "lagoon"), ("black", "candy"), ("white", "cobalt"), ("white", "umber"), ("black", "lilac"), ("black", "aqua")],
 }
 
@@ -93,8 +95,9 @@ if __name__ == "__main__":
         print(f"built {spec['slug']}")
         for theme in [t["id"] for t in spec.get("themes", [{"id": "light"}])]:
             c = colors(spec, theme)
+            page = rgb(c[spec["contrast_ground"]]) if spec.get("contrast_ground") else (255, 255, 255)
             row = []
             for fg, bg in PAIRS.get(spec["slug"], []):
-                g = rgb(c[bg])
+                g = rgb(c[bg], page)
                 row.append(f"{fg}/{bg} {ratio(rgb(c[fg], g), g):.1f}")
             print(f"  [{theme}] " + " | ".join(row))

@@ -1,6 +1,6 @@
 # AP3X Design System
 
-33 Claude Design Systems, each distilled from a site featured on [Site of Sites](https://www.siteofsites.co/?p=1). Every folder under `design-systems/<slug>/project/` is the exact file tree of a published Claude Design System artifact: `design-system.json` (index), `tokens.json`, a `README.md` brand book, three component previews and a cover.
+34 Claude Design Systems: 33 distilled from sites featured on [Site of Sites](https://www.siteofsites.co/?p=1), plus [Tracwell](#tracwell). Every folder under `design-systems/<slug>/project/` is the exact file tree of a published Claude Design System artifact: `design-system.json` (index), `tokens.json`, a `README.md` brand book, component previews (three each, six for Tracwell) and a cover.
 
 The existing **Apple HIG** system (https://claude.ai/artifact/TiFCULRVtSBGMNiXwdaHtM) lives only as an artifact and is not touched by anything here.
 
@@ -42,9 +42,22 @@ The existing **Apple HIG** system (https://claude.ai/artifact/TiFCULRVtSBGMNiXwd
 
 Two featured sites have no system: **partizan.com** blocks automated visitors (403), and **shirawiesenberg.com** currently shows a "domain not connected" placeholder instead of a site.
 
+## Tracwell
+
+| System | Source site | Artifact | Folder |
+| --- | --- | --- | --- |
+| Tracwell | [tracwell.app](https://tracwell.app/) | [open](https://claude.ai/artifact/7wB7s1CUiTDBHc3b6n7dpw) | `design-systems/tracwell` |
+
+Tracwell is built with Next.js and Turbopack, not webpack, and serves no source maps (`.js.map` and `.css.map` return 404). So the system was taken from two public sources on 2026-11-06:
+
+- **The compiled stylesheet.** Its Tailwind v4 theme carries the real tokens: shadcn-style `:root` and `.dark` themes, four data hues (traffic, revenue, acquisition, engagement), each with `-text` and `-soft` shades, and the landing's `.landing` tints, radius and display font. Values are copied exactly; the shadows are the site's own arbitrary `shadow-[…]` values.
+- **A Playwright capture.** A scroll-through video recording, 21 viewport frames and computed styles of every heading, button and card at 1440px. These gave the sizes, weights, paddings and the two-layer card that the CSS alone doesn't show.
+
+It has two themes. The marketing site is light only; the dark values are the product app's `.dark` theme from the same stylesheet. The display face, **Open Runde** (SIL OFL 1.1), ships as real files in `project/fonts/`, taken from the Fontsource npm package (byte-identical to what the site serves); text is **Inter**. The Tracwell mark is not copied. Its spec lives in `tools/systems_f.py`.
+
 ## How these were made
 
-- Colours, type sizes, line heights, letter-spacing and radii were measured from each live site's computed styles (headless Chromium, 1440px viewport) on 2026-10-11, plus pixel sampling for illustration and photo colours.
+- For the Site of Sites systems, colours, type sizes, line heights, letter-spacing and radii were measured from each live site's computed styles (headless Chromium, 1440px viewport) on 2026-10-11, plus pixel sampling for illustration and photo colours.
 - Licensed typefaces are named in each README and substituted with the closest Google Font; where a site already uses Google or system fonts (Inter, IBM Plex, Anton, Bebas Neue, Geist, Helvetica Neue, Courier Prime, Estelle's four faces…), the real face is used.
 - No logos, illustrations or photos were copied; each README says so and sets the name in type.
 - Every text/ground pair named in a token note was contrast-checked (`python3 tools/build.py` prints them). Where the source's own pair misses WCAG AA, the value is kept exact and the note flags it.

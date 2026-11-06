@@ -81,7 +81,7 @@ def build(spec, when=None):
         "version": 1,
         "meta": {"source": spec["source"]},
         "color": {"themes": spec.get("themes", [{"id": "light", "name": "Light"}]), "tokens": spec["colors"]},
-        "type": {"families": spec["families"], "groups": spec["type_groups"]},
+        "type": ({"fonts": spec["fonts"]} if spec.get("fonts") else {}) | {"families": spec["families"], "groups": spec["type_groups"]},
         "spacing": {"tokens": spec["spacing"]},
         "radius": {"tokens": spec["radius"]},
     }
@@ -108,7 +108,7 @@ def build(spec, when=None):
         "blobs": {},
         "docs": {"readme": "project/README.md", "sections": []},
         "lastChange": {"by": "Abhishek", "via": "Claude Code", "at": when,
-                       "note": f"Created from the public site {spec['source']['url']} (featured on siteofsites.co)."},
+                       "note": spec.get("note", f"Created from the public site {spec['source']['url']} (featured on siteofsites.co).")},
     }
     write("design-system.json", json.dumps(index, indent=2, ensure_ascii=False) + "\n")
     return base

@@ -1,0 +1,23 @@
+<!-- @dsCard group="Navigation" height=96 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--surface);padding:20px;font-family:var(--font-sans)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:8px;height:48px;padding:0 6px 0 14px;border:1px solid var(--border);border-radius:var(--radius-band);background:var(--background);max-width:900px}
+.w{font:600 18px/1 var(--font-display);letter-spacing:-0.4px;color:var(--foreground)}
+.c{display:flex}
+.c a{font:500 14px/20px var(--font-sans);color:var(--muted-foreground);padding:0 10px;text-decoration:none}
+.r{display:flex;align-items:center;gap:4px}
+.li{font:600 14px/20px var(--font-sans);color:var(--foreground);padding:0 16px;text-decoration:none}
+.st{display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:var(--radius-pill);background:var(--primary);color:var(--primary-foreground);font:600 14px/20px var(--font-sans);text-decoration:none;box-shadow:var(--shadow-button)}
+@media (max-width:640px){.c{display:none}}
+</style>
+</head>
+<body>
+<nav aria-label="Main navigation"><span class="w">Tracwell</span><div class="c"><a href="#">Features</a><a href="#">Demo</a><a href="#">How it works</a><a href="#">Pricing</a><a href="#">Docs</a></div><div class="r"><a class="li" href="#">Log in</a><a class="st" href="#">Start free</a></div></nav>
+</body>
+</html>

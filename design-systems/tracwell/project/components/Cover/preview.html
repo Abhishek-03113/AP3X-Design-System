@@ -1,0 +1,55 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tracwell</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--background); color:var(--foreground); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+
+  .pr{fill:var(--primary)} .rv{fill:var(--data-revenue)} .en{fill:var(--data-engagement)} .fg{fill:var(--foreground)}
+  .dot{fill:var(--background)}
+
+  .words { position:absolute; left:32px; bottom:28px; max-width:440px; }
+  .name { margin:0; font-family:var(--font-display); font-size:88px; line-height:0.95; font-weight:600; letter-spacing:-2.6px; color:var(--foreground);  }
+  .tag { margin:10px 0 0 2px; font-size:14px; line-height:20px; color:var(--muted-foreground); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+blocks      primary 264x240 slab (radius-band 24) · data-revenue 152x112 (radius-xl 18) · data-engagement 72x112 (radius-xl 18) · foreground 64x32 pill (radius-pill, half of 32)
+arrangement one tall primary slab with three satellites to its right, like the CTA band beside the dashboard's data hues
+pattern     the CTA band's own dot field: background discs at a space-6 (24) pitch cut out of the primary slab — the most Tracwell thing on the page
+scales      pitch space-6 24, disc r 8, gaps space-4 16, radii radius-band 24, radius-xl 18, radius-pill
+-->
+<rect class="pr" x="24" y="24" width="264" height="240" rx="24"/>
+<g class="dot">
+<circle cx="60" cy="60" r="8"/><circle cx="84" cy="60" r="8"/><circle cx="108" cy="60" r="8"/><circle cx="132" cy="60" r="8"/><circle cx="156" cy="60" r="8"/><circle cx="180" cy="60" r="8"/><circle cx="204" cy="60" r="8"/><circle cx="228" cy="60" r="8"/><circle cx="252" cy="60" r="8"/>
+<circle cx="60" cy="84" r="8"/><circle cx="84" cy="84" r="8"/><circle cx="108" cy="84" r="8"/><circle cx="132" cy="84" r="8"/><circle cx="228" cy="84" r="8"/><circle cx="252" cy="84" r="8"/>
+<circle cx="60" cy="108" r="8"/><circle cx="84" cy="108" r="8"/><circle cx="108" cy="108" r="8"/><circle cx="252" cy="108" r="8"/>
+<circle cx="60" cy="132" r="8"/><circle cx="84" cy="132" r="8"/><circle cx="252" cy="132" r="8"/>
+<circle cx="60" cy="156" r="8"/><circle cx="84" cy="156" r="8"/><circle cx="228" cy="156" r="8"/><circle cx="252" cy="156" r="8"/>
+<circle cx="60" cy="180" r="8"/><circle cx="84" cy="180" r="8"/><circle cx="108" cy="180" r="8"/><circle cx="204" cy="180" r="8"/><circle cx="228" cy="180" r="8"/><circle cx="252" cy="180" r="8"/>
+<circle cx="60" cy="204" r="8"/><circle cx="84" cy="204" r="8"/><circle cx="108" cy="204" r="8"/><circle cx="132" cy="204" r="8"/><circle cx="180" cy="204" r="8"/><circle cx="204" cy="204" r="8"/><circle cx="228" cy="204" r="8"/><circle cx="252" cy="204" r="8"/>
+<circle cx="60" cy="228" r="8"/><circle cx="84" cy="228" r="8"/><circle cx="108" cy="228" r="8"/><circle cx="132" cy="228" r="8"/><circle cx="156" cy="228" r="8"/><circle cx="180" cy="228" r="8"/><circle cx="204" cy="228" r="8"/><circle cx="228" cy="228" r="8"/><circle cx="252" cy="228" r="8"/>
+</g>
+<rect class="rv" x="304" y="24" width="152" height="112" rx="18"/>
+<rect class="en" x="304" y="152" width="72" height="112" rx="18"/>
+<rect class="fg" x="392" y="232" width="64" height="32" rx="16"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Tracwell</h1>
+<p class="tag">Agent-first product analytics for founders and builders.</p>
+</div>
+</div>
+</body>
+</html>

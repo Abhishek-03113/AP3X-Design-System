@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wordmark collapse</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+:root{--cream:#ede8e1;--card:#f3eee6;--paper:#fffdf8;--ink:#4d4638;--ink-deep:#16130e;--ink-muted:#6e685d;--blush:#f4c9be;--rose:#dda697;--font-sans:'Geist',Arial,system-ui,sans-serif;--font-serif:'Newsreader',Georgia,serif;--font-script:'La Belle Aurore',cursive;--ease-out:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.stage{height:300px;overflow:auto;border-radius:12px;background:var(--cream);position:relative}
+.nav{position:sticky;top:0;z-index:2;height:64px;display:flex;align-items:center;padding:0 24px;background:linear-gradient(rgba(237,232,225,.9),rgba(237,232,225,.6))}
+.wm{position:relative;display:inline-flex;align-items:center;height:32px}
+.wm i{font:500 22px/1 var(--font-serif);font-style:normal;letter-spacing:.1em;display:inline-block;transition:opacity .24s ease,transform .34s var(--ease-out)}
+.mark{position:absolute;left:0;width:32px;height:32px;border:2px solid var(--ink);border-radius:8px;display:grid;place-items:center;font:500 16px/1 var(--font-serif);opacity:0;transform:translateY(-10px) scale(.82);transition:opacity .22s ease,transform .3s cubic-bezier(.34,1.36,.64,1)}
+.nav.compact .wm i{opacity:0}
+.nav.compact .mark{opacity:1;transform:translateY(-10px) scale(1)}
+.fill{height:900px;padding:24px;color:var(--ink-muted)}
+@media (prefers-reduced-motion:reduce){.wm i,.mark{transition:none}}
+</style>
+</head>
+<body>
+<div class="stage" id="s"><div class="nav" id="n"><div class="wm" id="w"><span class="mark">DI</span></div></div><div class="fill">Scroll down past ~56px.</div></div>
+<script>
+const w = document.getElementById('w'), nav = document.getElementById('n'), stage = document.getElementById('s');
+[...'DECIMALS'].forEach((ch, i) => {
+  const el = document.createElement('i');
+  el.textContent = ch;
+  el.style.transitionDelay = (i === 0 ? 0.06 : 0.11 + (i - 1) * 0.022).toFixed(3) + 's';
+  el.dataset.i = i;
+  w.appendChild(el);
+});
+const apply = on => {
+  nav.classList.toggle('compact', on);
+  w.querySelectorAll('i').forEach(el => { el.style.transform = on && el.dataset.i > 0 ? `translateX(${(-11.96 * el.dataset.i).toFixed(2)}px)` : ''; });
+};
+stage.addEventListener('scroll', () => apply(stage.scrollTop > 56), { passive: true });
+</script>
+</body>
+</html>

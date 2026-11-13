@@ -1,0 +1,20 @@
+<!-- @dsCard group="Actions" height=110 subtitle="Ink and glass pills" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--cream);padding:24px;display:flex;gap:12px;align-items:center;font-family:var(--font-sans)}
+.b{height:36px;padding:0 16px;border-radius:var(--radius-pill);font:500 14px/1 var(--font-sans);letter-spacing:-.14px;cursor:pointer;transition:transform .15s cubic-bezier(.22,1,.36,1),box-shadow .15s cubic-bezier(.22,1,.36,1),filter .15s cubic-bezier(.22,1,.36,1)}
+.f{background:var(--ink);color:var(--paper);border:1px solid var(--ink);box-shadow:var(--shadow-pill-ink)}
+.g{background:rgba(255,253,248,.55) linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,0));color:var(--ink);border:1px solid rgba(77,70,56,.25);box-shadow:var(--shadow-pill-glass);backdrop-filter:blur(10px)}
+.lg{height:48px;padding:0 22px}
+.b:active{transform:scale(.98);filter:brightness(.96)}
+</style>
+</head>
+<body>
+<button class="b f lg">Get started</button><button class="b g lg">How it works</button><button class="b f">Get started</button><button class="b g">Log in</button>
+</body>
+</html>

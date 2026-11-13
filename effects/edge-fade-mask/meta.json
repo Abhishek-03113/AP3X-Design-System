@@ -1,0 +1,27 @@
+{
+  "slug": "edge-fade-mask",
+  "kind": "effect",
+  "title": "Edge fade mask",
+  "summary": "Blur-and-tint gradient masked to transparent so a sticky bar dissolves into the page with no visible edge.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "mask",
+    "blur",
+    "nav",
+    "gradient"
+  ],
+  "tech": [
+    "css mask-image",
+    "backdrop-filter"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

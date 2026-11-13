@@ -1,0 +1,27 @@
+{
+  "slug": "hero-blur-reveal",
+  "kind": "motion",
+  "title": "Hero blur reveal",
+  "summary": "Hero content enters from 30% opacity and a 12px blur, with a CSS-only fallback that reveals it after 2.6s.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "entrance",
+    "blur",
+    "hero",
+    "progressive-enhancement"
+  ],
+  "tech": [
+    "css animation",
+    "css transition"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

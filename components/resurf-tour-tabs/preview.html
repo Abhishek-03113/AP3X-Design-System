@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tour tabs</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--cream:#f8f8f8;--ground:#f8f8f8;--card:#efefef;--tile:#f3f3f3;--paper:#fffffd;--ink:#0f100d;--ink-button:#181614;--ink-title:#2b2b29;--ink-body:#6c6d6a;--ink-nav:#5a5a5a;--ink-muted:#767676;--ink-quiet:#7f7f7f;--ink-faint:#939393;--line:#e5e6e3;--chip:#dcdcdc;--grey-button:#eeeeee;--blue:#4078e8;--font-serif:'EB Garamond',Garamond,serif;--font-sans:'Inter',-apple-system,system-ui,sans-serif;--shadow-float:0 1px 2px rgba(0,0,0,.06),0 6px 18px rgba(0,0,0,.07);--shadow-tab:0 1px 2px rgba(0,0,0,.08)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.t{display:inline-flex;padding:4px;border-radius:999px;background:var(--tile);box-shadow:0 0 0 1px var(--line)}
+.t button{height:28px;padding:0 14px;border:0;border-radius:999px;background:none;font:500 13px/28px var(--font-sans);color:#6b6b6b;cursor:pointer}
+.t button.on{background:var(--paper);box-shadow:var(--shadow-tab);color:var(--ink)}
+.cap{margin-top:18px;font:400 14px/21px var(--font-sans);color:var(--ink-body)}.cap b{font-weight:500;color:var(--ink-title)}
+.th{display:flex;gap:8px;margin-top:18px}.th i{width:96px;height:58px;border-radius:8px;background:var(--card);display:block}.th i.on{box-shadow:0 0 0 2px var(--blue)}
+</style>
+</head>
+<body>
+<div class="t" id="t"><button class="on">Library</button><button>Inbox</button><button>View</button><button>Notes</button><button>Assistant</button></div><div class="cap" id="c"><b>Library</b> Select an image and discover similar references across your library.</div><div class="th" id="h"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+<script>
+const caps = { Library: 'Select an image and discover similar references across your library.', Inbox: 'Save now, sort later.', View: 'Read saved articles and PDFs in place.', Notes: 'A real editor, saved as Markdown.', Assistant: 'Ask about anything you have saved.' };
+const tabs = [...document.querySelectorAll('#t button')], c = document.getElementById('c'), th = [...document.querySelectorAll('#h i')];
+tabs.forEach((b, i) => b.addEventListener('click', () => {
+  tabs.forEach(x => x.classList.toggle('on', x === b));
+  th.forEach((x, j) => x.classList.toggle('on', j === i));
+  c.innerHTML = '<b>' + b.textContent + '</b> ' + caps[b.textContent];
+}));
+</script>
+</body>
+</html>

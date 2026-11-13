@@ -1,0 +1,27 @@
+{
+  "slug": "glass-pill-depth",
+  "kind": "effect",
+  "title": "Glass pill depth",
+  "summary": "Layered shadow stack that gives pill buttons a pressed-paper, lit-from-above depth, in ink and glass variants.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "shadow",
+    "button",
+    "glass",
+    "light"
+  ],
+  "tech": [
+    "css box-shadow",
+    "backdrop-filter"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

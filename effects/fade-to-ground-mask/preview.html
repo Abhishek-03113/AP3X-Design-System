@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fade to ground mask</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap">
+<style>
+:root{--cream:#f3f3f3;--ground:#f3f3f3;--paper:#ffffff;--ink:#000000;--ink-soft:#727272;--amber:#d89024;--ember:#fc480c;--azure:#0c78fc;--violet:#b46cd8;--leaf:#30a818;--amber-text:#a86a00;--ember-text:#d63a05;--violet-text:#8f3fc0;--leaf-text:#1f7d0e;--font-sans:'Inter',-apple-system,'SF Pro Text',system-ui,sans-serif;--shadow-chip:0 1px 2px rgba(0,0,0,.10),0 6px 18px rgba(0,0,0,.10)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.stage{height:300px;border-radius:12px;background:linear-gradient(var(--ground),var(--paper));display:flex;justify-content:center;padding-top:24px;overflow:hidden}
+.d{width:260px;height:300px;border:6px solid #1c1c1e;border-bottom:0;border-radius:28px 28px 0 0;background:var(--paper);-webkit-mask-image:linear-gradient(#000 45%,transparent 92%);mask-image:linear-gradient(#000 45%,transparent 92%);display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:16px}
+.d i{border-radius:8px;background:#e4e4e8;height:62px;display:block}
+.d i:nth-child(3n){background:#f0d9c4}.d i:nth-child(4n){background:#d6e4f5}
+</style>
+</head>
+<body>
+<div class="stage"><div class="d" role="img" aria-label="Device mockup placeholder"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+</body>
+</html>

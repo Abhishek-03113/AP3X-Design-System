@@ -1,0 +1,27 @@
+{
+  "slug": "ambient-drift",
+  "kind": "motion",
+  "title": "Ambient drift",
+  "summary": "Two huge blush radial blobs drifting on 52s and 64s ease-in-out loops behind sticky page content.",
+  "source": {
+    "name": "decimals.co",
+    "url": "https://www.decimals.co/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/decimals"
+  },
+  "tags": [
+    "background",
+    "loop",
+    "ambient",
+    "gradient"
+  ],
+  "tech": [
+    "css animation",
+    "radial-gradient"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

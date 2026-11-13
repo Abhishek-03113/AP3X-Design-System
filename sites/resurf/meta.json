@@ -1,0 +1,29 @@
+{
+  "slug": "resurf",
+  "kind": "site",
+  "title": "Resurf site",
+  "summary": "Calm editorial landing page: off-white ground, two-tone Garamond-like headlines, flat grey feature cards, one big product screenshot on a gradient wallpaper.",
+  "source": {
+    "name": "resurf.so (screenshots)",
+    "url": "https://resurf.so/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/resurf",
+    "method": "five full-width browser screenshots supplied by the owner; pixel sampling and cap-height measurement at about 1:1 scale"
+  },
+  "tags": [
+    "site",
+    "app",
+    "productivity",
+    "light",
+    "editorial"
+  ],
+  "tech": [
+    "next.js",
+    "tailwind"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

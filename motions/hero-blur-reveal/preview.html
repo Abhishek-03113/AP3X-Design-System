@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hero blur reveal</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+:root{--cream:#ede8e1;--card:#f3eee6;--paper:#fffdf8;--ink:#4d4638;--ink-deep:#16130e;--ink-muted:#6e685d;--blush:#f4c9be;--rose:#dda697;--font-sans:'Geist',Arial,system-ui,sans-serif;--font-serif:'Newsreader',Georgia,serif;--font-script:'La Belle Aurore',cursive;--ease-out:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.hero{text-align:center;padding:48px 0}
+.hero>*{opacity:.3;filter:blur(12px);transition:opacity .25s ease,filter .25s ease}
+.hero.in>*{opacity:1;filter:none}
+.hero.in>*:nth-child(2){transition-delay:.06s}.hero.in>*:nth-child(3){transition-delay:.12s}
+h1{font:500 48px/1.15 var(--font-serif);letter-spacing:-.04em;margin:0 0 12px}
+p{font-size:18px;color:var(--ink-muted);margin:0 0 20px}
+.btn{height:44px;padding:0 20px;border-radius:999px;background:var(--ink);color:var(--paper);border:0;font:500 14px var(--font-sans)}
+.replay{margin:0 auto;display:block;background:none;border:1px solid var(--ink-muted);border-radius:999px;padding:6px 14px;color:var(--ink);font:500 13px var(--font-sans);cursor:pointer}
+@media (prefers-reduced-motion:reduce){.hero>*{opacity:1;filter:none;transition:none}}
+</style>
+</head>
+<body>
+<section class="hero" id="h"><h1>Hire designers who care</h1><p>A scout network for hiring designers</p><button class="btn">Get started</button></section><button class="replay" id="r">Replay</button>
+<script>
+const h = document.getElementById('h');
+const play = () => { h.classList.remove('in'); void h.offsetWidth; requestAnimationFrame(() => h.classList.add('in')); };
+document.getElementById('r').addEventListener('click', play);
+setTimeout(play, 300);
+</script>
+</body>
+</html>

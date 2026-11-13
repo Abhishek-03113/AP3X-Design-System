@@ -1,0 +1,28 @@
+{
+  "slug": "resurf-tour-tabs",
+  "kind": "component",
+  "title": "Tour tabs",
+  "summary": "Pill segmented control that switches the product tour, with caption and thumbnail strip.",
+  "source": {
+    "name": "resurf.so (screenshots)",
+    "url": "https://resurf.so/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/resurf",
+    "method": "five full-width browser screenshots supplied by the owner; pixel sampling and cap-height measurement at about 1:1 scale"
+  },
+  "tags": [
+    "tabs",
+    "segmented",
+    "carousel",
+    "tour"
+  ],
+  "tech": [
+    "css",
+    "js"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

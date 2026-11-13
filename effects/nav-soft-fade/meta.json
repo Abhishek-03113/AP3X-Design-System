@@ -1,0 +1,27 @@
+{
+  "slug": "nav-soft-fade",
+  "kind": "effect",
+  "title": "Nav soft fade",
+  "summary": "A white-to-ground gradient under the sticky nav so scrolled content slides beneath it with no hard edge.",
+  "source": {
+    "name": "resurf.so (screenshots)",
+    "url": "https://resurf.so/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/resurf",
+    "method": "five full-width browser screenshots supplied by the owner; pixel sampling and cap-height measurement at about 1:1 scale"
+  },
+  "tags": [
+    "nav",
+    "gradient",
+    "sticky",
+    "fade"
+  ],
+  "tech": [
+    "css gradient"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

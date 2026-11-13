@@ -1,6 +1,6 @@
 # AP3X Design System
 
-33 Claude Design Systems, each distilled from a site featured on [Site of Sites](https://www.siteofsites.co/?p=1). Every folder under `design-systems/<slug>/project/` is the exact file tree of a published Claude Design System artifact: `design-system.json` (index), `tokens.json`, a `README.md` brand book, three component previews and a cover.
+35 Claude Design Systems, 33 distilled from sites featured on [Site of Sites](https://www.siteofsites.co/?p=1) plus Decimals (from [a1.gallery](https://www.a1.gallery/)) and Resurf (from screenshots of resurf.so). Every folder under `design-systems/<slug>/project/` is the exact file tree of a published Claude Design System artifact: `design-system.json` (index), `tokens.json`, a `README.md` brand book, three component previews and a cover.
 
 The existing **Apple HIG** system (https://claude.ai/artifact/TiFCULRVtSBGMNiXwdaHtM) lives only as an artifact and is not touched by anything here.
 
@@ -39,6 +39,8 @@ The existing **Apple HIG** system (https://claude.ai/artifact/TiFCULRVtSBGMNiXwd
 | 1-800 Happy Birthday | [1800happybirthday.com](https://1800happybirthday.com/) | [open](https://claude.ai/artifact/BeipkYC32igWuajk9T8uyV) | `design-systems/1-800-happy-birthday` |
 | The List | [thelist.design](https://thelist.design/) | [open](https://claude.ai/artifact/Mc1G892WuvzaF9gMNAsf1Q) | `design-systems/the-list` |
 | Sam Thies | [samthies.com](https://samthies.com/) | [open](https://claude.ai/artifact/SF54upFXTSZUBvmebmDYJJ) | `design-systems/sam-thies` |
+| Decimals | [decimals.co](https://www.decimals.co/) | [open](https://claude.ai/artifact/Ctpb8dtodonas36BftuEDx) | `design-systems/decimals` |
+| Resurf | [resurf.so](https://resurf.so/) (read from owner-supplied screenshots; the site blocks automated browsers) | [open](https://claude.ai/artifact/CYU2Bpo5DD3sCUgRia3vtp) | `design-systems/resurf` |
 
 Two featured sites have no system: **partizan.com** blocks automated visitors (403), and **shirawiesenberg.com** currently shows a "domain not connected" placeholder instead of a site.
 
@@ -56,6 +58,42 @@ Specs live in `tools/systems_a.py` … `tools/systems_e.py`; artifact URLs in `t
 ```sh
 python3 tools/build.py              # rebuild every system and print contrast ratios
 python3 tools/build.py flowlife     # rebuild one system by slug
+python3 tools/assets.py             # rebuild effects/, motions/, components/, sites/ and the asset table
+node tools/capture.js <url> <dir>   # measure a live site with Playwright (styles, motion, screenshots)
+node tools/capture-scroll.js <url> <dir>  # step down the page and record scroll-linked transforms, IntersectionObservers and listeners
 ```
 
 To push a change to an artifact, republish the changed `project/` files to that system's URL (index last).
+
+## Individual assets
+
+Effects, motions, components and site designs are stored one per folder, with a standalone `preview.html` (open it directly in a browser), a `README.md` and a `meta.json`. Regenerate with `python3 tools/assets.py`.
+
+<!-- assets:start -->
+| Asset | Kind | What it is | Source | Tags |
+| --- | --- | --- | --- | --- |
+| [Nav bar](components/decimals-nav-bar) | component | Three-zone floating nav (wordmark, links, pills) over a blur-fade gradient. | [decimals.co](https://www.decimals.co/) | navigation, header, sticky |
+| [Pill button pair](components/decimals-pill-button) | component | Filled ink and glass call-to-action pills, 36px and 48px, with the layered shadow stack. | [decimals.co](https://www.decimals.co/) | button, cta, pill |
+| [Testimonial row](components/decimals-testimonial-row) | component | Two-column proof row: copy and pinned quote beside a blush portrait panel with a handwritten tag. | [decimals.co](https://www.decimals.co/) | card, testimonial, content |
+| [Feature card](components/resurf-feature-card) | component | Flat grey card with a centred floating mini-UI above a medium title and one-line description; optional Opt-in pill. | [resurf.so (screenshots)](https://resurf.so/) | card, feature, grid, grey |
+| [Format tiles](components/resurf-format-tiles) | component | Two offset rows of small grey format tiles (icon top-left, label bottom-left) fading out at both edges. | [resurf.so (screenshots)](https://resurf.so/) | tiles, marquee, mask, formats |
+| [Status pill](components/resurf-status-pill) | component | Small reassurance pills: Local first, No account needed, Synced with iCloud, or your own AI key. | [Resurf (App Store art)](https://apps.apple.com/us/app/resurf-save-organize/id6782162097) | pill, badge, trust |
+| [Tag chip](components/resurf-tag-chip) | component | Colour-coded content-type chip (Notes, Voice notes, Links, Screenshots, Videos) with glyph and label. | [Resurf (App Store art)](https://apps.apple.com/us/app/resurf-save-organize/id6782162097) | chip, tag, pill, content-type |
+| [Tour tabs](components/resurf-tour-tabs) | component | Pill segmented control that switches the product tour, with caption and thumbnail strip. | [resurf.so (screenshots)](https://resurf.so/) | tabs, segmented, carousel, tour |
+| [CTA press glow](effects/cta-press-glow) | effect | Button that tilts toward the pointer on press while a multiply glow follows the touch point. | [decimals.co](https://www.decimals.co/) | interaction, button, 3d, pointer |
+| [Dot globe](effects/dot-globe) | effect | Canvas dot sphere with faint meridians that auto-rotates, leans toward the pointer and pauses off-screen. | [decimals.co](https://www.decimals.co/) | canvas, globe, hero, pointer, recreation |
+| [Edge fade mask](effects/edge-fade-mask) | effect | Blur-and-tint gradient masked to transparent so a sticky bar dissolves into the page with no visible edge. | [decimals.co](https://www.decimals.co/) | mask, blur, nav, gradient |
+| [Fade to ground mask](effects/fade-to-ground-mask) | effect | Device mockups dissolve into the page along their lower edge instead of sitting in a frame. | [Resurf (App Store art)](https://apps.apple.com/us/app/resurf-save-organize/id6782162097) | mask, gradient, device, hero |
+| [Glass pill depth](effects/glass-pill-depth) | effect | Layered shadow stack that gives pill buttons a pressed-paper, lit-from-above depth, in ink and glass variants. | [decimals.co](https://www.decimals.co/) | shadow, button, glass, light |
+| [Nav soft fade](effects/nav-soft-fade) | effect | A white-to-ground gradient under the sticky nav so scrolled content slides beneath it with no hard edge. | [resurf.so (screenshots)](https://resurf.so/) | nav, gradient, sticky, fade |
+| [Tilted chip lift](effects/tilted-chip-lift) | effect | White pill chips rotated by different small angles with a soft diffuse shadow, scattered around a device. | [Resurf (App Store art)](https://apps.apple.com/us/app/resurf-save-organize/id6782162097) | chips, shadow, rotation, scatter |
+| [Ambient drift](motions/ambient-drift) | motion | Two huge blush radial blobs drifting on 52s and 64s ease-in-out loops behind sticky page content. | [decimals.co](https://www.decimals.co/) | background, loop, ambient, gradient |
+| [Float in](motions/float-in) | motion | Ten-pixel rise with fade, plus a slow ping-ring for live indicators. | [decimals.co](https://www.decimals.co/) | entrance, fade, indicator |
+| [Hero blur reveal](motions/hero-blur-reveal) | motion | Hero content enters from 30% opacity and a 12px blur, with a CSS-only fallback that reveals it after 2.6s. | [decimals.co](https://www.decimals.co/) | entrance, blur, hero, progressive-enhancement |
+| [Logo ticker](motions/logo-ticker) | motion | Endless 46s linear marquee under edge masks that pauses on hover and dims everything except the hovered mark. | [decimals.co](https://www.decimals.co/) | marquee, loop, hover, mask |
+| [Scroll fade up](motions/scroll-fade-up) | motion | Sections hold at opacity 0 and 12px low, then rise in over about 0.45s when their top crosses 95% of the viewport. | [decimals.co](https://www.decimals.co/) | scroll, reveal, fade, intersection-observer |
+| [Stacking sticky cards](motions/stacking-sticky-cards) | motion | Proof rows pin one after another; each shrinks to 0.965, lifts 8px and blurs 2px as the next row slides over it. | [decimals.co](https://www.decimals.co/) | scroll, sticky, stack, blur, scale |
+| [Wordmark collapse](motions/wordmark-collapse) | motion | Past about 55px of scroll the nav wordmark slides letter by letter into its monogram, which pops in with a small overshoot. | [decimals.co](https://www.decimals.co/) | scroll, nav, logo, stagger, overshoot |
+| [Decimals site](sites/decimals) | site | Warm-paper recruiting site: dotted-globe hero, logo ticker, alternating proof rows, torn-paper problem cards, ambient glow. | [decimals.co](https://www.decimals.co/) | site, landing, recruiting, warm, serif |
+| [Resurf site](sites/resurf) | site | Calm editorial landing page: off-white ground, two-tone Garamond-like headlines, flat grey feature cards, one big product screenshot on a gradient wallpaper. | [resurf.so (screenshots)](https://resurf.so/) | site, app, productivity, light, editorial |
+<!-- assets:end -->

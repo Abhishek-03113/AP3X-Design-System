@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edge fade mask</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+:root{--cream:#ede8e1;--card:#f3eee6;--paper:#fffdf8;--ink:#4d4638;--ink-deep:#16130e;--ink-muted:#6e685d;--blush:#f4c9be;--rose:#dda697;--font-sans:'Geist',Arial,system-ui,sans-serif;--font-serif:'Newsreader',Georgia,serif;--font-script:'La Belle Aurore',cursive;--ease-out:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.stage{height:260px;overflow:auto;border-radius:12px;background:var(--cream);position:relative}
+.nav{position:sticky;top:0;padding:18px 24px;font:500 14px var(--font-sans);display:flex;gap:20px}
+.nav::before{content:"";position:absolute;inset:0 0 -36px;z-index:-1;pointer-events:none;background:linear-gradient(rgba(237,232,225,.78) 0%,rgba(237,232,225,.55) 55%,rgba(237,232,225,0) 100%);backdrop-filter:blur(12px);-webkit-mask-image:linear-gradient(#000 0%,#000 50%,transparent 100%);mask-image:linear-gradient(#000 0%,#000 50%,transparent 100%)}
+.blk{height:90px;margin:16px 24px;border-radius:8px;background:var(--blush)}
+.blk:nth-child(even){background:var(--rose)}
+</style>
+</head>
+<body>
+<div class="stage"><div class="nav"><span>How it works</span><span>Placements</span><span>Blog</span></div><div class="blk"></div><div class="blk"></div><div class="blk"></div><div class="blk"></div></div><p>Scroll inside the frame.</p>
+</body>
+</html>

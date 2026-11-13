@@ -1,0 +1,27 @@
+{
+  "slug": "resurf-feature-card",
+  "kind": "component",
+  "title": "Feature card",
+  "summary": "Flat grey card with a centred floating mini-UI above a medium title and one-line description; optional Opt-in pill.",
+  "source": {
+    "name": "resurf.so (screenshots)",
+    "url": "https://resurf.so/",
+    "captured": "2026-10-25",
+    "designSystem": "design-systems/resurf",
+    "method": "five full-width browser screenshots supplied by the owner; pixel sampling and cap-height measurement at about 1:1 scale"
+  },
+  "tags": [
+    "card",
+    "feature",
+    "grid",
+    "grey"
+  ],
+  "tech": [
+    "css"
+  ],
+  "files": [
+    "meta.json",
+    "README.md",
+    "preview.html"
+  ]
+}

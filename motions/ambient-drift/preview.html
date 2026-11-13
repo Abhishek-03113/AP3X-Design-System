@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ambient drift</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+:root{--cream:#ede8e1;--card:#f3eee6;--paper:#fffdf8;--ink:#4d4638;--ink-deep:#16130e;--ink-muted:#6e685d;--blush:#f4c9be;--rose:#dda697;--font-sans:'Geist',Arial,system-ui,sans-serif;--font-serif:'Newsreader',Georgia,serif;--font-script:'La Belle Aurore',cursive;--ease-out:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.amb{position:relative;height:300px;overflow:hidden;border-radius:12px;background:var(--cream)}
+.blob{position:absolute;border-radius:50%;pointer-events:none}
+.a{width:74%;aspect-ratio:1;top:58%;left:38%;background:radial-gradient(circle,rgba(244,201,190,.42) 0%,rgba(244,201,190,0) 62%);animation:da 52s ease-in-out infinite}
+.b{width:62%;aspect-ratio:1;top:72%;left:84%;background:radial-gradient(circle,rgba(221,166,151,.24) 0%,rgba(221,166,151,0) 62%);animation:db 64s ease-in-out infinite}
+.txt{position:relative;padding:32px;font:500 28px/1.2 var(--font-serif);letter-spacing:-.03em}
+@keyframes da{0%,100%{transform:translate(-50%,-50%)}33%{transform:translate(calc(-50% + 9vw),calc(-50% - 7vh)) scale(1.12)}66%{transform:translate(calc(-50% - 6vw),calc(-50% + 5vh)) scale(.94)}}
+@keyframes db{0%,100%{transform:translate(-50%,-50%)}40%{transform:translate(calc(-50% - 10vw),calc(-50% - 8vh)) scale(1.1)}75%{transform:translate(calc(-50% + 7vw),calc(-50% + 4vh)) scale(.96)}}
+@media (prefers-reduced-motion:reduce){.blob{animation:none}}
+</style>
+</head>
+<body>
+<div class="amb"><div class="blob a"></div><div class="blob b"></div><div class="txt">Traditional recruiting stopped working</div></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nav bar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=La+Belle+Aurore&display=swap">
+<style>
+:root{--cream:#ede8e1;--card:#f3eee6;--paper:#fffdf8;--ink:#4d4638;--ink-deep:#16130e;--ink-muted:#6e685d;--blush:#f4c9be;--rose:#dda697;--font-sans:'Geist',Arial,system-ui,sans-serif;--font-serif:'Newsreader',Georgia,serif;--font-script:'La Belle Aurore',cursive;--ease-out:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.n{position:relative;display:flex;align-items:center;justify-content:space-between;padding:12px 8px}
+.n::before{content:"";position:absolute;inset:0 0 -36px;z-index:-1;background:linear-gradient(rgba(237,232,225,.78),rgba(237,232,225,.55) 55%,rgba(237,232,225,0));backdrop-filter:blur(12px);-webkit-mask-image:linear-gradient(#000 50%,transparent);mask-image:linear-gradient(#000 50%,transparent)}
+.w{font:500 22px/1 var(--font-serif);letter-spacing:.12em}
+.l{display:flex;gap:20px;letter-spacing:-.14px}
+.l a{padding:12px 8px;color:rgba(77,70,56,.55);transition:color .2s;cursor:pointer}.l a:hover{color:var(--ink)}
+.p{display:flex;gap:8px}
+.p span{height:36px;padding:0 16px;border-radius:999px;display:inline-flex;align-items:center;font-weight:500;letter-spacing:-.14px}
+.a{background:var(--ink);color:var(--paper);box-shadow:0 0 0 1px rgba(18,18,18,.22),0 1px 2px rgba(18,18,18,.13),inset 0 1px 0 rgba(255,255,255,.16)}
+.g{background:rgba(255,253,248,.55);border:1px solid rgba(77,70,56,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.75)}
+</style>
+</head>
+<body>
+<div class="n"><span class="w">STUDIO</span><nav class="l"><a>How it works</a><a>Placements</a><a>Become a Scout</a><a>Blog</a></nav><div class="p"><span class="a">Get started</span><span class="g">Log in</span></div></div>
+</body>
+</html>

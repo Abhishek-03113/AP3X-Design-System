@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tilted chip lift</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap">
+<style>
+:root{--cream:#f3f3f3;--ground:#f3f3f3;--paper:#ffffff;--ink:#000000;--ink-soft:#727272;--amber:#d89024;--ember:#fc480c;--azure:#0c78fc;--violet:#b46cd8;--leaf:#30a818;--amber-text:#a86a00;--ember-text:#d63a05;--violet-text:#8f3fc0;--leaf-text:#1f7d0e;--font-sans:'Inter',-apple-system,'SF Pro Text',system-ui,sans-serif;--shadow-chip:0 1px 2px rgba(0,0,0,.10),0 6px 18px rgba(0,0,0,.10)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font:400 14px/21px var(--font-sans);padding:32px}
+.stage{position:relative;height:300px;border-radius:12px;background:linear-gradient(var(--ground),var(--paper));overflow:hidden}
+.d{position:absolute;left:50%;bottom:-40px;width:220px;height:250px;margin-left:-110px;border:6px solid #1c1c1e;border-radius:28px;background:#fff;opacity:.8}
+.c{position:absolute;display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 18px;border-radius:999px;background:#fff;box-shadow:var(--shadow-chip);font:600 20px/1 var(--font-sans);letter-spacing:-.01em}
+.g{width:20px;height:20px;border-radius:6px;display:inline-block}
+</style>
+</head>
+<body>
+<div class="stage"><div class="d"></div><span class="c" style="left:8%;top:18%;transform:rotate(-6deg)"><i class="g" style="background:var(--amber)"></i>Inspirations</span><span class="c" style="right:8%;top:10%;transform:rotate(5deg);color:var(--ember-text)"><i class="g" style="background:var(--ember)"></i>Research</span><span class="c" style="right:12%;top:52%;transform:rotate(-3deg);color:var(--violet-text)"><i class="g" style="background:var(--violet)"></i>Ideas</span><span class="c" style="left:10%;top:66%;transform:rotate(4deg);color:var(--leaf-text)"><i class="g" style="background:var(--leaf)"></i>Projects</span></div>
+</body>
+</html>
